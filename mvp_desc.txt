@@ -1,0 +1,80 @@
+MVP — Predictive Analytics & Robotic Battery Servicing for LEO Satellites
+Problem Statement
+Battery failures are mission-critical: High-value LEO satellites (EO, SAR, communications, government) can fail instantly if power systems degrade unexpectedly.
+
+
+Current maintenance is costly or impossible: Most satellites are not designed for easy replacement, and launching replacements or backup satellites is expensive.
+
+
+Predictive maintenance gap: Operators lack accessible, real-time analytics to schedule maintenance before degradation becomes catastrophic.
+
+
+
+Proposed Solution
+Predictive analytics + robotic servicing: Monitor satellite telemetry, predict battery RUL, and automatically trigger maintenance actions (battery replacement for MVP)
+
+
+Hybrid approach for feasibility:
+
+
+Simulation: Gazebo models docking/rendezvous to show realistic servicing workflow.
+
+
+Physical demo: Bench 3-DOF robotic arm performs battery pick-and-place and verification on mock satellite.
+
+
+Closed-loop system: Detect → Decide → Act → Verify, demonstrated in real-time dashboard.
+
+
+
+Business Model / Commercial Rationale
+Target customers: High-value satellites where downtime costs are large enough to justify maintenance services.
+
+
+Revenue model:
+
+
+Subscription for predictive analytics (RUL monitoring, anomaly alerts).
+
+
+Per-service fee for battery swaps or other modular maintenance.
+
+
+Managed O&M contracts combining analytics + physical servicing.
+
+
+Value proposition:
+
+
+Reduces unplanned mission downtime.
+
+
+Extends satellite lifetime.
+
+
+Provides predictable, scalable revenue streams for service operators.
+
+
+Competitive advantage: Bench demo proves that predictive RUL can reliably trigger maintenance, lowering risk and cost before full-scale external servicing deployment.
+
+
+
+Demo / Technical Highlights
+Telemetry & RUL: NASA SMAP/MSL anomaly dataset + NASA PCoE Li-ion battery dataset.
+
+
+Robotic arm: 3-DOF pick-and-place on 3D-printed battery cassettes.
+
+
+Verification: INA219 voltage/current, latch switches, optional computer vision.
+
+
+Dashboard: Shows anomalies, battery health, maintenance events, and verification logs.
+
+
+
+MVP Goal
+ Demonstrate a realistic, commercially relevant workflow: predictive analytics triggers maintenance → simulated docking → physical arm executes swap → verification completes the loop.
+
+
+

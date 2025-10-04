@@ -1,0 +1,17 @@
+Predictive analytics and serving of satellites
+
+General dashboard/use-case: anomaly detection
+https://www.kaggle.com/datasets/patrickfleith/nasa-anomaly-detection-dataset-smap-msl?
+
+Specific Demo of Use-Case: Power Supply Health and RUL Predictions (NASA PCoE (prognostic centre of intelligence) battery lifecycle dataset)
+https://data.nasa.gov/dataset/li-ion-battery-aging-datasets?
+Specific detection case to avoid power-system failure; life extension with scheduled replacement batteries
+Health metric/RUL regressor → threshold → triggers robotic battery replace
+Arm task: repeatable pick-and-place of a 3D-printed battery cassette; latch/unlatch and insert a fresh module.
+
+
+External service docks with pattery to conduct maintenance (e.g. battery swap), more commercially likely 
+Gazebo Simulation (may revert to NVIDIA Isaac Sim): simulate docking and rendezvous
+Physical Demo: battery pick & place + verification (could use CV to verify setup)
+Dashboard: anomalies + health condition, data
+
