@@ -19,6 +19,12 @@ class ArmController:
     def __init__(self, ik_solver: IKSolver2R, serial_comm):
         self.ik = ik_solver
         self.serial = serial_comm
+        # Ensure servos are at a known neutral position when controller starts
+        try:
+            if hasattr(self.serial, "zero_servos"):
+                self.serial.zero_servos()
+        except Exception as e:
+            print(f"Warning: failed to zero servos in ArmController init: {e}")
 
     def move_to(self, x, y, z, phi_rad=0.0, elbow='down', steps=15, claw_open=1, roll=0):
         # For this simple scaffold we project x,y,z into planar range: use sqrt(x^2+y^2) as planar radius

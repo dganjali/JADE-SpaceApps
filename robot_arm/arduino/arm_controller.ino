@@ -29,6 +29,22 @@ void setup() {
   servoP3.attach(P3_PIN);
   servoRoll.attach(ROLL_PIN);
   servoClaw.attach(CLAW_PIN);
+  // Write neutral/safe positions to micro servos on boot
+  // Adjust these values to match your hardware neutral pose if needed
+  int neutralYaw = 90;
+  int neutralP1 = 90;
+  int neutralP2 = 90;
+  int neutralP3 = 90;
+  int neutralRoll = 0;
+  int neutralClaw = 125; // claw open
+
+  servoYaw.write(neutralYaw);
+  servoP1.write(neutralP1);
+  servoP2.write(neutralP2);
+  servoP3.write(neutralP3);
+  servoRoll.write(neutralRoll);
+  servoClaw.write(neutralClaw);
+  delay(500);
 }
 
 void loop() {
