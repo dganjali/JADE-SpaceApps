@@ -3,9 +3,9 @@
 #include <gz/sim/EntityComponentManager.hh>
 #include <gz/sim/System.hh>
 #include <gz/sim/Link.hh>
-#include <gz/sim/components/WorldLinearVelocityCmd.hh>
-#include <gz/sim/components/WorldAngularVelocityCmd.hh>
-#include <gz/sim/components/WorldPose.hh>
+#include <gz/sim/components/LinearVelocityCmd.hh>
+#include <gz/sim/components/AngularVelocityCmd.hh>
+#include <gz/sim/components/Pose.hh>
 #include <gz/sim/components/Name.hh>
 #include <gz/sim/components/Link.hh>
 #include <gz/sim/Util.hh>
@@ -43,7 +43,7 @@ namespace thruster_controller
       // Read thruster names from SDF list or default to known link names
       if (sdf && sdf->HasElement("thrusters"))
       {
-        auto thrEl = sdf->GetElement("thrusters");
+        auto thrEl = const_cast<sdf::Element*>(sdf.get())->GetElement("thrusters");
         auto el = thrEl->GetFirstElement();
         while (el)
         {
@@ -70,27 +70,29 @@ namespace thruster_controller
         auto link = this->model.LinkByName(ecm, name);
         if (link)
         {
-          this->thrusterLinks[name] = link.Entity();
+          this->thrusterLinks[name] = link;
           // Subscribe to per-thruster topic for thrust command in Newtons (gz.msgs.Double)
           std::string topic = "/model/" + this->modelName + "/thrusters/" + name;
-          this->node.Subscribe(topic, [this, topic](const gz::msgs::Double &_msg)
+          std::function<void(const gz::msgs::Double &)> callback = [this, topic](const gz::msgs::Double &_msg)
           {
             this->OnThrustTopic(topic, _msg.data());
-          });
+          };
+          this->node.Subscribe(topic, callback);
         }
       }
 
       // Optional: global command to zero all thrusters
       std::string zeroTopic = "/model/" + this->modelName + "/thrusters/zero";
-      this->node.Subscribe(zeroTopic, [this](const gz::msgs::Boolean &_msg)
+      std::function<void(const gz::msgs::Boolean &)> zeroCallback = [this](const gz::msgs::Boolean &_msg)
       {
         if (_msg.data()) this->thrust.clear();
-      });
+      };
+      this->node.Subscribe(zeroTopic, zeroCallback);
 
       // Cache base link
       auto base = this->model.LinkByName(ecm, "base_link");
       if (base)
-        this->baseLink = base.Entity();
+        this->baseLink = base;
 
       // Random walk config
       if (sdf)
@@ -128,7 +130,7 @@ namespace thruster_controller
       if (this->baseLink == gz::sim::kNullEntity)
         return;
 
-      auto basePoseComp = ecm.Component<gz::sim::components::WorldPose>(this->baseLink);
+      auto basePoseComp = ecm.Component<gz::sim::components::Pose>(this->baseLink);
       if (!basePoseComp)
         return;
       const auto &basePose = basePoseComp->Data();
@@ -145,7 +147,7 @@ namespace thruster_controller
         if (itLink == this->thrusterLinks.end()) continue;
         auto linkEntity = itLink->second;
 
-        auto poseComp = ecm.Component<gz::sim::components::WorldPose>(linkEntity);
+        auto poseComp = ecm.Component<gz::sim::components::Pose>(linkEntity);
         if (!poseComp) continue;
         const auto &pose = poseComp->Data();
 
@@ -160,18 +162,18 @@ namespace thruster_controller
 
       // Map force/torque to simple velocity commands for visible motion (non-physical)
       // Tune gains as needed for your training visualization.
-      const double kV = 0.002;  // m/s per Newton
-      const double kW = 0.002;  // rad/s per N*m
+      const double kV = 0.1;  // m/s per Newton (increased for visible movement)
+      const double kW = 0.1;  // rad/s per N*m (increased for visible movement)
 
-      auto vComp = ecm.Component<gz::sim::components::WorldLinearVelocityCmd>(this->baseLink);
+      auto vComp = ecm.Component<gz::sim::components::LinearVelocityCmd>(this->baseLink);
       if (!vComp)
-        ecm.CreateComponent(this->baseLink, gz::sim::components::WorldLinearVelocityCmd(F * kV));
+        ecm.CreateComponent(this->baseLink, gz::sim::components::LinearVelocityCmd(F * kV));
       else
         vComp->Data() = F * kV;
 
-      auto wComp = ecm.Component<gz::sim::components::WorldAngularVelocityCmd>(this->baseLink);
+      auto wComp = ecm.Component<gz::sim::components::AngularVelocityCmd>(this->baseLink);
       if (!wComp)
-        ecm.CreateComponent(this->baseLink, gz::sim::components::WorldAngularVelocityCmd(Tau * kW));
+        ecm.CreateComponent(this->baseLink, gz::sim::components::AngularVelocityCmd(Tau * kW));
       else
         wComp->Data() = Tau * kW;
     }

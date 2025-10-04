@@ -243,21 +243,17 @@
     <allow_auto_disable>false</allow_auto_disable>
     <static>false</static>
 
-    <!-- Thruster controller system plugin -->
-  <plugin filename="libthruster_controller.dylib" name="thruster_controller::Plugin">
-      <thrusters>
-        <thruster name="thruster_px"/>
-        <thruster name="thruster_nx"/>
-        <thruster name="thruster_py"/>
-        <thruster name="thruster_ny"/>
-        <thruster name="thruster_pz"/>
-        <thruster name="thruster_nz"/>
-      </thrusters>
-      <!-- Internal random walk test (set to true to enable) -->
-      <random_walk>true</random_walk>
-      <rate>10</rate>
-      <maxN>1.5</maxN>
-      <step>0.2</step>
+    <!-- Realistic thruster controller system plugin -->
+  <plugin filename="librealistic_thruster_controller.dylib" name="realistic_thruster_controller::Plugin">
+      <target_model>astro_dock</target_model>
+      <max_thrust>8.0</max_thrust>
+      <thrust_efficiency>0.92</thrust_efficiency>
+      <fuel_mass>100.0</fuel_mass>
+      <isp>280.0</isp>
+      <kp_linear>0.8</kp_linear>
+      <kp_angular>1.2</kp_angular>
+      <kd_linear>0.15</kd_linear>
+      <kd_angular>0.25</kd_angular>
     </plugin>
   </model>
 </sdf>

@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/dganjali/GitHub/JADE-SpaceApps/gazebo/plugins/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

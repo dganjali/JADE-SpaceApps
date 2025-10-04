@@ -1,0 +1,8 @@
+set(__QT_DEPLOY_TARGET_thruster_controller_FILE /Users/dganjali/GitHub/JADE-SpaceApps/gazebo/plugins/build/libthruster_controller.dylib)
+set(__QT_DEPLOY_TARGET_thruster_controller_TYPE SHARED_LIBRARY)
+set(__QT_DEPLOY_TARGET_docking_controller_FILE /Users/dganjali/GitHub/JADE-SpaceApps/gazebo/plugins/build/libdocking_controller.dylib)
+set(__QT_DEPLOY_TARGET_docking_controller_TYPE SHARED_LIBRARY)
+set(__QT_DEPLOY_TARGET_realistic_thruster_controller_FILE /Users/dganjali/GitHub/JADE-SpaceApps/gazebo/plugins/build/librealistic_thruster_controller.dylib)
+set(__QT_DEPLOY_TARGET_realistic_thruster_controller_TYPE SHARED_LIBRARY)
+set(__QT_DEPLOY_TARGET_random_movement_controller_FILE /Users/dganjali/GitHub/JADE-SpaceApps/gazebo/plugins/build/librandom_movement_controller.dylib)
+set(__QT_DEPLOY_TARGET_random_movement_controller_TYPE SHARED_LIBRARY)

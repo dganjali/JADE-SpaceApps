@@ -77,10 +77,16 @@
       </attenuation>
     </light>
 
-    <!-- Add the training satellite (folder name: models/satellite) -->
+    <!-- Add the main satellite (AstroSat) -->
     <include>
-      <uri>model://satellite</uri>
-      <pose>0 0 0.5 0 0 0</pose>
+      <uri>file:///Users/dganjali/GitHub/JADE-SpaceApps/gazebo/models/satellite</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <!-- Add the target docking station (AstroDock) -->
+    <include>
+      <uri>file:///Users/dganjali/GitHub/JADE-SpaceApps/gazebo/models/astro_dock</uri>
+      <pose>5 0 0 0 0 0</pose>
     </include>
 
   </world>
