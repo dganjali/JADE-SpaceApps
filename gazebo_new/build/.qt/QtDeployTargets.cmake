@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_thruster_controller_FILE /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/libthruster_controller.dylib)
+set(__QT_DEPLOY_TARGET_thruster_controller_TYPE SHARED_LIBRARY)

@@ -1,0 +1,7 @@
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/thruster_controller.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/edit_cache.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/rebuild_cache.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/list_install_components.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/install.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/install/local.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/install/strip.dir
