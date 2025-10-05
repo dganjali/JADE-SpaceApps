@@ -174,6 +174,56 @@ thruster_controller/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/build
 .PHONY : thruster_controller/fast
 
+#=============================================================================
+# Target rules for targets named realistic_orbital_controller
+
+# Build rule for target.
+realistic_orbital_controller: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realistic_orbital_controller
+.PHONY : realistic_orbital_controller
+
+# fast build rule for target.
+realistic_orbital_controller/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/build
+.PHONY : realistic_orbital_controller/fast
+
+#=============================================================================
+# Target rules for targets named vision_based_orbital_controller
+
+# Build rule for target.
+vision_based_orbital_controller: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 vision_based_orbital_controller
+.PHONY : vision_based_orbital_controller
+
+# fast build rule for target.
+vision_based_orbital_controller/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/build
+.PHONY : vision_based_orbital_controller/fast
+
+src/realistic_orbital_controller.o: src/realistic_orbital_controller.cpp.o
+.PHONY : src/realistic_orbital_controller.o
+
+# target to build an object file
+src/realistic_orbital_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/src/realistic_orbital_controller.cpp.o
+.PHONY : src/realistic_orbital_controller.cpp.o
+
+src/realistic_orbital_controller.i: src/realistic_orbital_controller.cpp.i
+.PHONY : src/realistic_orbital_controller.i
+
+# target to preprocess a source file
+src/realistic_orbital_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/src/realistic_orbital_controller.cpp.i
+.PHONY : src/realistic_orbital_controller.cpp.i
+
+src/realistic_orbital_controller.s: src/realistic_orbital_controller.cpp.s
+.PHONY : src/realistic_orbital_controller.s
+
+# target to generate assembly for a file
+src/realistic_orbital_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/src/realistic_orbital_controller.cpp.s
+.PHONY : src/realistic_orbital_controller.cpp.s
+
 src/thruster_controller.o: src/thruster_controller.cpp.o
 .PHONY : src/thruster_controller.o
 
@@ -198,6 +248,30 @@ src/thruster_controller.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/src/thruster_controller.cpp.s
 .PHONY : src/thruster_controller.cpp.s
 
+src/vision_based_orbital_controller.o: src/vision_based_orbital_controller.cpp.o
+.PHONY : src/vision_based_orbital_controller.o
+
+# target to build an object file
+src/vision_based_orbital_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/src/vision_based_orbital_controller.cpp.o
+.PHONY : src/vision_based_orbital_controller.cpp.o
+
+src/vision_based_orbital_controller.i: src/vision_based_orbital_controller.cpp.i
+.PHONY : src/vision_based_orbital_controller.i
+
+# target to preprocess a source file
+src/vision_based_orbital_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/src/vision_based_orbital_controller.cpp.i
+.PHONY : src/vision_based_orbital_controller.cpp.i
+
+src/vision_based_orbital_controller.s: src/vision_based_orbital_controller.cpp.s
+.PHONY : src/vision_based_orbital_controller.s
+
+# target to generate assembly for a file
+src/vision_based_orbital_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/src/vision_based_orbital_controller.cpp.s
+.PHONY : src/vision_based_orbital_controller.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,10 +284,18 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... realistic_orbital_controller"
 	@echo "... thruster_controller"
+	@echo "... vision_based_orbital_controller"
+	@echo "... src/realistic_orbital_controller.o"
+	@echo "... src/realistic_orbital_controller.i"
+	@echo "... src/realistic_orbital_controller.s"
 	@echo "... src/thruster_controller.o"
 	@echo "... src/thruster_controller.i"
 	@echo "... src/thruster_controller.s"
+	@echo "... src/vision_based_orbital_controller.o"
+	@echo "... src/vision_based_orbital_controller.i"
+	@echo "... src/vision_based_orbital_controller.s"
 .PHONY : help
 
 

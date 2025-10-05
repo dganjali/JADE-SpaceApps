@@ -37,9 +37,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/Users/dganjali/.pyenv/shims/uname"
       - "/Users/dganjali/.pyenv/bin/uname"
@@ -60,6 +61,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -72,9 +75,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -120,9 +125,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/Users/dganjali/.pyenv/shims/gmake"
       - "/Users/dganjali/.pyenv/bin/gmake"
@@ -141,9 +147,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/gmake"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/gmake"
-      - "/opt/X11/bin/gmake"
       - "/Library/Apple/usr/bin/gmake"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/gmake"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/gmake"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gmake"
       - "/Users/dganjali/.pyenv/shims/make"
       - "/Users/dganjali/.pyenv/bin/make"
       - "/Users/dganjali/.gem/ruby/3.1.3/bin/make"
@@ -163,6 +170,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -175,9 +184,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -221,9 +232,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/Users/dganjali/.pyenv/shims/cc"
       - "/Users/dganjali/.pyenv/bin/cc"
@@ -244,6 +256,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -256,9 +270,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -292,6 +308,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -304,9 +322,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -407,9 +427,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ar"
     search_context:
       ENV{PATH}:
@@ -419,6 +440,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -431,9 +454,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -471,9 +496,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ranlib"
     search_context:
       ENV{PATH}:
@@ -483,6 +509,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -495,9 +523,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -535,9 +565,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/strip"
     search_context:
       ENV{PATH}:
@@ -547,6 +578,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -559,9 +592,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -599,9 +634,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/ld"
     search_context:
       ENV{PATH}:
@@ -611,6 +647,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -623,9 +661,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -663,9 +703,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/nm"
     search_context:
       ENV{PATH}:
@@ -675,6 +716,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -687,9 +730,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -727,9 +772,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     found: "/usr/bin/objdump"
     search_context:
       ENV{PATH}:
@@ -739,6 +785,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -751,9 +799,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -791,9 +841,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/objcopy"
       - "/Users/dganjali/.pyenv/shims/objcopy"
@@ -812,9 +863,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/objcopy"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/objcopy"
-      - "/opt/X11/bin/objcopy"
       - "/Library/Apple/usr/bin/objcopy"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/objcopy"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/objcopy"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/objcopy"
     found: false
     search_context:
       ENV{PATH}:
@@ -824,6 +876,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -836,9 +890,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -876,9 +932,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/readelf"
       - "/Users/dganjali/.pyenv/shims/readelf"
@@ -897,9 +954,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/readelf"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/readelf"
-      - "/opt/X11/bin/readelf"
       - "/Library/Apple/usr/bin/readelf"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/readelf"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/readelf"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/readelf"
     found: false
     search_context:
       ENV{PATH}:
@@ -909,6 +967,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -921,9 +981,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -961,9 +1023,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/dlltool"
       - "/Users/dganjali/.pyenv/shims/dlltool"
@@ -982,9 +1045,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/dlltool"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/dlltool"
-      - "/opt/X11/bin/dlltool"
       - "/Library/Apple/usr/bin/dlltool"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/dlltool"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/dlltool"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/dlltool"
     found: false
     search_context:
       ENV{PATH}:
@@ -994,6 +1058,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1006,9 +1072,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1046,9 +1114,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/addr2line"
       - "/Users/dganjali/.pyenv/shims/addr2line"
@@ -1067,9 +1136,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/addr2line"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/addr2line"
-      - "/opt/X11/bin/addr2line"
       - "/Library/Apple/usr/bin/addr2line"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/addr2line"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/addr2line"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/addr2line"
     found: false
     search_context:
       ENV{PATH}:
@@ -1079,6 +1149,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1091,9 +1163,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1131,9 +1205,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/usr/bin/tapi"
       - "/Users/dganjali/.pyenv/shims/tapi"
@@ -1152,9 +1227,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/tapi"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/tapi"
-      - "/opt/X11/bin/tapi"
       - "/Library/Apple/usr/bin/tapi"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/tapi"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/tapi"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/tapi"
     found: false
     search_context:
       ENV{PATH}:
@@ -1164,6 +1240,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1176,9 +1254,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1215,6 +1295,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1227,9 +1309,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "find-v1"
     backtrace:
@@ -1263,6 +1347,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1275,9 +1361,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
   -
     kind: "message-v1"
     backtrace:
@@ -1378,9 +1466,10 @@ events:
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin/"
       - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin/"
-      - "/opt/X11/bin/"
       - "/Library/Apple/usr/bin/"
       - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/"
+      - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/"
+      - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/"
     searched_directories:
       - "/Users/dganjali/.pyenv/shims/install_name_tool"
       - "/Users/dganjali/.pyenv/bin/install_name_tool"
@@ -1401,6 +1490,8 @@ events:
         - "/Users/dganjali/.gem/ruby/3.1.3/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
         - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.pyenv/bin"
         - "/opt/homebrew/bin"
         - "/opt/homebrew/sbin"
         - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
@@ -1413,9 +1504,11 @@ events:
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
         - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
         - "/Library/Apple/usr/bin"
         - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
+        - "/Users/dganjali/.pyenv/bin"
+        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
+        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
       CMAKE_INSTALL_PREFIX: "/usr/local"
   -
     kind: "try_compile-v1"
@@ -1426,8 +1519,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E"
-      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E"
+      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK"
+      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1439,18 +1532,18 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E'
+        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f09ef/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f09ef.dir/build.make CMakeFiles/cmTC_f09ef.dir/build
-        Building C object CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o
-        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8559d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8559d.dir/build.make CMakeFiles/cmTC_8559d.dir/build
+        Building C object CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         Apple clang version 17.0.0 (clang-1700.0.13.5)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c
         clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"
@@ -1463,13 +1556,13 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking C executable cmTC_f09ef
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f09ef.dir/link.txt --verbose=1
+        Linking C executable cmTC_8559d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8559d.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.0.13.5)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f09ef -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_8559d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1167.5
         BUILD 01:45:05 Apr 30 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1482,7 +1575,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -o cmTC_f09ef
+        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -o cmTC_8559d
         
       exitCode: 0
   -
@@ -1526,18 +1619,18 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E']
+        ignore line: [Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f09ef/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f09ef.dir/build.make CMakeFiles/cmTC_f09ef.dir/build]
-        ignore line: [Building C object CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o]
-        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8559d/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_8559d.dir/build.make CMakeFiles/cmTC_8559d.dir/build]
+        ignore line: [Building C object CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-6jzA4E -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EEQtRK -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -x c /opt/homebrew/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"]
@@ -1550,13 +1643,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking C executable cmTC_f09ef]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f09ef.dir/link.txt --verbose=1]
+        ignore line: [Linking C executable cmTC_8559d]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8559d.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_f09ef -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_8559d -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1573,12 +1666,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_f09ef] ==> ignore
+          arg [cmTC_8559d] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_f09ef.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_8559d.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
         linker tool for 'C': /Library/Developer/CommandLineTools/usr/bin/ld
@@ -1621,8 +1714,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC"
-      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC"
+      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd"
+      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1635,19 +1728,19 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC'
+        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c0ef3/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c0ef3.dir/build.make CMakeFiles/cmTC_c0ef3.dir/build
-        Building CXX object CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o
-        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2f46b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2f46b.dir/build.make CMakeFiles/cmTC_2f46b.dir/build
+        Building CXX object CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -arch arm64   -v -Wl,-v -MD -MT CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Apple clang version 17.0.0 (clang-1700.0.13.5)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
         clang++: warning: -Wl,-v: 'linker' input unused [-Wunused-command-line-argument]
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"
-         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+         "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"
         ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"
@@ -1661,13 +1754,13 @@ events:
          /Library/Developer/CommandLineTools/usr/include
          /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)
         End of search list.
-        Linking CXX executable cmTC_c0ef3
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0ef3.dir/link.txt --verbose=1
+        Linking CXX executable cmTC_2f46b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f46b.dir/link.txt --verbose=1
         Apple clang version 17.0.0 (clang-1700.0.13.5)
         Target: arm64-apple-darwin24.6.0
         Thread model: posix
         InstalledDir: /Library/Developer/CommandLineTools/usr/bin
-         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_c0ef3 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
+         "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2f46b -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a
         @(#)PROGRAM:ld PROJECT:ld-1167.5
         BUILD 01:45:05 Apr 30 2025
         configured to support archs: armv6 armv7 armv7s arm64 arm64e arm64_32 i386 x86_64 x86_64h armv6m armv7k armv7m armv7em
@@ -1680,7 +1773,7 @@ events:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/swift
         Framework search paths:
         	/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_c0ef3
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -v -Wl,-v CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_2f46b
         
       exitCode: 0
   -
@@ -1726,19 +1819,19 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC']
+        ignore line: [Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd']
         ignore line: []
-        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c0ef3/fast]
-        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c0ef3.dir/build.make CMakeFiles/cmTC_c0ef3.dir/build]
-        ignore line: [Building CXX object CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o]
-        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2f46b/fast]
+        ignore line: [/Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2f46b.dir/build.make CMakeFiles/cmTC_2f46b.dir/build]
+        ignore line: [Building CXX object CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -arch arm64   -v -Wl -v -MD -MT CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -c /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
         ignore line: [clang++: warning: -Wl -v: 'linker' input unused [-Wunused-command-line-argument]]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"]
-        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-k3FgdC -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [ "/Library/Developer/CommandLineTools/usr/bin/clang" -cc1 -triple arm64-apple-macosx15.0.0 -Wundef-prefix=TARGET_OS_ -Wdeprecated-objc-isa-usage -Werror=deprecated-objc-isa-usage -Werror=implicit-function-declaration -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -mframe-pointer=non-leaf -fno-strict-return -ffp-contract=on -fno-rounding-math -funwind-tables=1 -fobjc-msgsend-selector-stubs -target-sdk-version=15.5 -fvisibility-inlines-hidden-static-local-var -fdefine-target-os-macros -fno-assume-unique-vtables -fno-modulemap-allow-subdirectory-search -target-cpu apple-m1 -target-feature +zcm -target-feature +zcz -target-feature +v8.5a -target-feature +aes -target-feature +altnzcv -target-feature +ccdp -target-feature +complxnum -target-feature +crc -target-feature +dotprod -target-feature +fp-armv8 -target-feature +fp16fml -target-feature +fptoint -target-feature +fullfp16 -target-feature +jsconv -target-feature +lse -target-feature +neon -target-feature +pauth -target-feature +perfmon -target-feature +predres -target-feature +ras -target-feature +rcpc -target-feature +rdm -target-feature +sb -target-feature +sha2 -target-feature +sha3 -target-feature +specrestrict -target-feature +ssbs -target-abi darwinpcs -debugger-tuning=lldb -fdebug-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd -target-linker-version 1167.5 -v -fcoverage-compilation-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-3tbrFd -resource-dir /Library/Developer/CommandLineTools/usr/lib/clang/17 -dependency-file CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o.d -skip-unused-modulemap-deps -MT CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -I/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -internal-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include -internal-isystem /Library/Developer/CommandLineTools/usr/lib/clang/17/include -internal-externc-isystem /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -internal-externc-isystem /Library/Developer/CommandLineTools/usr/include -Wno-reorder-init-list -Wno-implicit-int-float-conversion -Wno-c99-designator -Wno-final-dtor-non-final-class -Wno-extra-semi-stmt -Wno-misleading-indentation -Wno-quoted-include-in-framework-header -Wno-implicit-fallthrough -Wno-enum-enum-conversion -Wno-enum-float-conversion -Wno-elaborated-enum-base -Wno-reserved-identifier -Wno-gnu-folding-constant -fdeprecated-macro -ferror-limit 19 -stack-protector 1 -fstack-check -mdarwin-stkchk-strong-link -fblocks -fencode-extended-block-signature -fregister-global-dtors-with-atexit -fgnuc-version=4.2.1 -fno-cxx-modules -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -fmax-type-align=16 -fcommon -clang-vendor-feature=+disableNonDependentMemberExprInCurrentInstantiation -fno-odr-hash-protocols -clang-vendor-feature=+enableAggressiveVLAFolding -clang-vendor-feature=+revert09abecef7bbf -clang-vendor-feature=+thisNoAlignAttr -clang-vendor-feature=+thisNoNullAttr -clang-vendor-feature=+disableAtImportPrivateFrameworkInImplementationError -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /opt/homebrew/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [clang -cc1 version 17.0.0 (clang-1700.0.13.5) default target arm64-apple-darwin24.6.0]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/local/include"]
         ignore line: [ignoring nonexistent directory "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/SubFrameworks"]
@@ -1752,13 +1845,13 @@ events:
         ignore line: [ /Library/Developer/CommandLineTools/usr/include]
         ignore line: [ /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks (framework directory)]
         ignore line: [End of search list.]
-        ignore line: [Linking CXX executable cmTC_c0ef3]
-        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0ef3.dir/link.txt --verbose=1]
+        ignore line: [Linking CXX executable cmTC_2f46b]
+        ignore line: [/opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f46b.dir/link.txt --verbose=1]
         ignore line: [Apple clang version 17.0.0 (clang-1700.0.13.5)]
         ignore line: [Target: arm64-apple-darwin24.6.0]
         ignore line: [Thread model: posix]
         ignore line: [InstalledDir: /Library/Developer/CommandLineTools/usr/bin]
-        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_c0ef3 -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
+        link line: [ "/Library/Developer/CommandLineTools/usr/bin/ld" -demangle -lto_library /Library/Developer/CommandLineTools/usr/lib/libLTO.dylib -dynamic -arch arm64 -platform_version macos 15.0.0 15.5 -syslibroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -mllvm -enable-linkonceodr-outlining -o cmTC_2f46b -L/usr/local/lib -search_paths_first -headerpad_max_install_names -v CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o -lc++ -lSystem /Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
           arg [/Library/Developer/CommandLineTools/usr/bin/ld] ==> ignore
           arg [-demangle] ==> ignore
           arg [-lto_library] ==> ignore, skip following value
@@ -1775,12 +1868,12 @@ events:
           arg [-mllvm] ==> ignore
           arg [-enable-linkonceodr-outlining] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_c0ef3] ==> ignore
+          arg [cmTC_2f46b] ==> ignore
           arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
           arg [-search_paths_first] ==> ignore
           arg [-headerpad_max_install_names] ==> ignore
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_c0ef3.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [CMakeFiles/cmTC_2f46b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
           arg [-lc++] ==> lib [c++]
           arg [-lSystem] ==> lib [System]
           arg [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a] ==> lib [/Library/Developer/CommandLineTools/usr/lib/clang/17/lib/darwin/libclang_rt.osx.a]
@@ -1815,576 +1908,6 @@ events:
       will use ld-classic for: armv6 armv7 armv7s i386 armv6m armv7k armv7m armv7em
       LTO support using: LLVM version 17.0.0 (static support for 29, runtime is 29)
       TAPI support using: Apple TAPI version 17.0.0 (tapi-1700.0.3.5)
-  -
-    kind: "find_package-v1"
-    backtrace:
-      - "CMakeLists.txt:5 (find_package)"
-    name: "ignition-gazebo6"
-    configs:
-      -
-        filename: "ignition-gazebo6Config.cmake"
-        kind: "cmake"
-      -
-        filename: "ignition-gazebo6-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
-    settings:
-      required: "required_explicit"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "ignition-gazebo6"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: true
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/pkgRedirects/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/pkgRedirects/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/shims/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/shims/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.gem/ruby/3.1.3/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.gem/ruby/3.1.3/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/Python.framework/Versions/3.10/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/Python.framework/Versions/3.10/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/local/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/local/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Cryptexes/App/usr/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Cryptexes/App/usr/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/X11/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/X11/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Apple/usr/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Apple/usr/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/X11R6/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/X11R6/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/Library/Frameworks/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/Library/Frameworks/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Library/Frameworks/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Library/Frameworks/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Applications/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Applications/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Applications/ignition-gazebo6Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Applications/ignition-gazebo6-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found: null
-    search_context:
-      ENV{PATH}:
-        - "/Users/dganjali/.pyenv/shims"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.gem/ruby/3.1.3/bin"
-        - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
-        - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/opt/X11/bin"
-        - "/Library/Apple/usr/bin"
-        - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-...
-
----
-events:
-  -
-    kind: "find_package-v1"
-    backtrace:
-      - "CMakeLists.txt:5 (find_package)"
-    name: "gz-sim10"
-    configs:
-      -
-        filename: "gz-sim10Config.cmake"
-        kind: "cmake"
-      -
-        filename: "gz-sim10-config.cmake"
-        kind: "cmake"
-    version_request:
-      exact: false
-    settings:
-      required: "required_explicit"
-      quiet: false
-      global: false
-      policy_scope: true
-      bypass_provider: false
-      names:
-        - "gz-sim10"
-      path_suffixes:
-        - ""
-      paths:
-        CMAKE_FIND_USE_CMAKE_PATH: true
-        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-        CMAKE_FIND_USE_INSTALL_PREFIX: true
-        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
-        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
-        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
-        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
-    candidates:
-      -
-        path: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/pkgRedirects/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/pkgRedirects/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/shims/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/shims/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.pyenv/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.gem/ruby/3.1.3/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.gem/ruby/3.1.3/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.rubies/ruby-3.1.3/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/homebrew/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/Python.framework/Versions/3.10/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/Python.framework/Versions/3.10/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/local/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/local/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Cryptexes/App/usr/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Cryptexes/App/usr/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Apple/usr/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Apple/usr/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/X11R6/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/usr/X11R6/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/opt/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/Library/Frameworks/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Developer/CommandLineTools/Library/Frameworks/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Library/Frameworks/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Library/Frameworks/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/System/Library/Frameworks/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Applications/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Users/dganjali/Applications/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Applications/gz-sim10Config.cmake"
-        mode: "config"
-        reason: "no_exist"
-      -
-        path: "/Applications/gz-sim10-config.cmake"
-        mode: "config"
-        reason: "no_exist"
-    found: null
-    search_context:
-      ENV{PATH}:
-        - "/Users/dganjali/.pyenv/shims"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.gem/ruby/3.1.3/bin"
-        - "/Users/dganjali/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin"
-        - "/Users/dganjali/.rubies/ruby-3.1.3/bin"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/opt/homebrew/bin"
-        - "/opt/homebrew/sbin"
-        - "/Library/Frameworks/Python.framework/Versions/3.10/bin"
-        - "/usr/local/bin"
-        - "/System/Cryptexes/App/usr/bin"
-        - "/usr/bin"
-        - "/bin"
-        - "/usr/sbin"
-        - "/sbin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin"
-        - "/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin"
-        - "/Library/Apple/usr/bin"
-        - "/Users/dganjali/Drone Media/test/VMware Fusion.app/Contents/Public"
-        - "/Users/dganjali/.pyenv/bin"
-        - "/Users/dganjali/.vscode/extensions/ms-python.debugpy-2025.10.0-darwin-arm64/bundled/scripts/noConfigScripts"
-        - "/Users/dganjali/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
-      CMAKE_SYSTEM_PREFIX_PATH:
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr"
-        - "/"
-        - "/opt/homebrew"
-        - "/usr/local"
-        - "/usr/X11R6"
-        - "/usr/pkg"
-        - "/opt"
-        - "/sw"
-        - "/opt/local"
-      CMAKE_SYSTEM_FRAMEWORK_PATH:
-        - "~/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/Network/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Developer/CommandLineTools/Library/Frameworks"
-        - "/Library/Frameworks"
-        - "/Network/Library/Frameworks"
-        - "/System/Library/Frameworks"
-...
-
----
-events:
   -
     kind: "find_package-v1"
     backtrace:
@@ -5065,8 +4588,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EVLXDH"
-      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EVLXDH"
+      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-4F0h1a"
+      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-4F0h1a"
     cmakeVariables:
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -5079,15 +4602,15 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EVLXDH'
+        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-4F0h1a'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_424db/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_424db.dir/build.make CMakeFiles/cmTC_424db.dir/build
-        Building C object CMakeFiles/cmTC_424db.dir/src.c.o
-        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_424db.dir/src.c.o -MF CMakeFiles/cmTC_424db.dir/src.c.o.d -o CMakeFiles/cmTC_424db.dir/src.c.o -c /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-EVLXDH/src.c
-        Linking C executable cmTC_424db
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_424db.dir/link.txt --verbose=1
-        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_424db.dir/src.c.o -o cmTC_424db
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3bcb7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3bcb7.dir/build.make CMakeFiles/cmTC_3bcb7.dir/build
+        Building C object CMakeFiles/cmTC_3bcb7.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -arch arm64 -MD -MT CMakeFiles/cmTC_3bcb7.dir/src.c.o -MF CMakeFiles/cmTC_3bcb7.dir/src.c.o.d -o CMakeFiles/cmTC_3bcb7.dir/src.c.o -c /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-4F0h1a/src.c
+        Linking C executable cmTC_3bcb7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3bcb7.dir/link.txt --verbose=1
+        /usr/bin/cc  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3bcb7.dir/src.c.o -o cmTC_3bcb7
         
       exitCode: 0
   -
@@ -12625,8 +12148,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ZUc8qc"
-      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ZUc8qc"
+      source: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ESVKcs"
+      binary: "/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ESVKcs"
     cmakeVariables:
       CMAKE_CXX_FLAGS: ""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -12639,15 +12162,15 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ZUc8qc'
+        Change Dir: '/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ESVKcs'
         
-        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_963f7/fast
-        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_963f7.dir/build.make CMakeFiles/cmTC_963f7.dir/build
-        Building CXX object CMakeFiles/cmTC_963f7.dir/src.cxx.o
-        /usr/bin/c++ -DHAVE_STDATOMIC  -arch arm64 -MD -MT CMakeFiles/cmTC_963f7.dir/src.cxx.o -MF CMakeFiles/cmTC_963f7.dir/src.cxx.o.d -o CMakeFiles/cmTC_963f7.dir/src.cxx.o -c /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ZUc8qc/src.cxx
-        Linking CXX executable cmTC_963f7
-        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_963f7.dir/link.txt --verbose=1
-        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_963f7.dir/src.cxx.o -o cmTC_963f7
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_3781b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_3781b.dir/build.make CMakeFiles/cmTC_3781b.dir/build
+        Building CXX object CMakeFiles/cmTC_3781b.dir/src.cxx.o
+        /usr/bin/c++ -DHAVE_STDATOMIC  -arch arm64 -MD -MT CMakeFiles/cmTC_3781b.dir/src.cxx.o -MF CMakeFiles/cmTC_3781b.dir/src.cxx.o.d -o CMakeFiles/cmTC_3781b.dir/src.cxx.o -c /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/CMakeScratch/TryCompile-ESVKcs/src.cxx
+        Linking CXX executable cmTC_3781b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3781b.dir/link.txt --verbose=1
+        /usr/bin/c++  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_3781b.dir/src.cxx.o -o cmTC_3781b
         
       exitCode: 0
   -

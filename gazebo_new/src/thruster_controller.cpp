@@ -48,6 +48,7 @@ public:
     if (_sdf->HasElement("kd")) this->kd = _sdf->Get<double>("kd");
     if (_sdf->HasElement("max_force")) this->maxForce = _sdf->Get<double>("max_force");
     if (_sdf->HasElement("dock_init_speed")) this->dockInitSpeed = _sdf->Get<double>("dock_init_speed");
+    if (_sdf->HasElement("dock_thrust_force")) this->dockThrustForce = _sdf->Get<double>("dock_thrust_force");
 
     // find world (first world)
     this->worldEntity = gz::sim::worldEntity(ecm);
@@ -97,25 +98,27 @@ public:
           return true;
         });
       
-      // if found both, init dock random velocity once
+      // if found both, init dock random thrust direction once
       if (this->dockLinkEntity != kNullEntity && !this->dockInitialized)
       {
-        // set random linear velocity for dock link
+        // set random thrust direction for dock
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_real_distribution<double> dist(-1.0, 1.0);
-        gz::math::Vector3d v(dist(gen), dist(gen), dist(gen));
-        v.Normalize();
-        v *= this->dockInitSpeed; // small speed
-        
-        // Enable velocity commands and set initial velocity
-        Link dockLink(this->dockLinkEntity);
-        dockLink.EnableVelocityChecks(ecm);
-        ecm.SetComponentData<components::LinearVelocity>(this->dockLinkEntity, v);
+        this->dockThrustDirection = gz::math::Vector3d(dist(gen), dist(gen), dist(gen));
+        this->dockThrustDirection.Normalize();
         
         this->dockInitialized = true;
-        std::cout << "[ThrusterController] dock initial velocity set to " << v << std::endl;
+        std::cout << "[ThrusterController] dock thrust direction set to " << this->dockThrustDirection << std::endl;
       }
+    }
+
+    // Apply continuous thrust to dock to keep it moving
+    if (this->dockLinkEntity != kNullEntity && this->dockInitialized)
+    {
+      Link dockLink(this->dockLinkEntity);
+      gz::math::Vector3d dockThrust = this->dockThrustDirection * this->dockThrustForce;
+      dockLink.AddWorldForce(ecm, dockThrust);
     }
 
     if (this->targetLinkEntity == kNullEntity || this->dockLinkEntity == kNullEntity) return;
@@ -146,12 +149,30 @@ public:
     gz::math::Vector3d relPos = dockPose.Pos() - targetPose.Pos();
     gz::math::Vector3d relVel = vDock - vTarget;
     double dist = relPos.Length();
+    double relSpeed = relVel.Length();
 
-    // if within reach threshold, stop and report success
-    if (dist <= this->reachDistance)
+    // if within reach threshold and relative velocity is low, success!
+    if (dist <= this->reachDistance && relSpeed < 0.2)
     {
-      std::cout << "[ThrusterController] SUCCESS: reached dock. distance=" << dist << std::endl;
+      std::cout << "[ThrusterController] SUCCESS: reached dock. distance=" << dist 
+                << " rel_speed=" << relSpeed << " m/s" << std::endl;
       this->done = true;
+      return;
+    }
+    
+    // If getting too close but moving too fast, apply braking force only
+    if (dist < this->reachDistance * 2.0 && relSpeed > 0.5)
+    {
+      // Emergency braking - only if approaching too fast
+      gz::math::Vector3d brakingForce = -vTarget.Normalized() * this->maxForce * 0.5;
+      targetLink.AddWorldForce(ecm, brakingForce);
+      
+      if (this->iter % 100 == 0)
+      {
+        std::cout << "[ThrusterController] BRAKING: dist=" << dist 
+                  << " rel_speed=" << relSpeed << " m/s" << std::endl;
+      }
+      this->iter++;
       return;
     }
 
@@ -194,13 +215,15 @@ private:
   double kp = 1.0;
   double kd = 0.5;
   double maxForce = 10.0;
-  double dockInitSpeed = 0.15;
+  double dockInitSpeed = 0.15; // deprecated, keeping for compatibility
+  double dockThrustForce = 5.0; // continuous thrust force for dock
 
   // internal
   bool configured{false};
   bool dockInitialized{false};
   bool done{false};
   uint64_t iter{0};
+  gz::math::Vector3d dockThrustDirection{0, 0, 0};
 
   // entity refs
   Entity worldEntity;

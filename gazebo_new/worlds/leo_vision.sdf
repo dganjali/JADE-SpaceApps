@@ -1,0 +1,826 @@
+<?xml version="1.0"?>
+<sdf version="1.8">
+  <world name="leo_realistic">
+    
+    <!-- Physics: Zero gravity world, high update rate for accurate control -->
+    <physics name="fast" type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+
+    <gravity>0 0 0</gravity>
+    
+    <!-- Scene with ambient lighting -->
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.05 0.05 0.1 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <!-- Lighting -->
+    <light type="directional" name="sun">
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    
+    <!-- Additional directional light for ambient effect -->
+    <light type="directional" name="ambient_light">
+      <cast_shadows>false</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.4 0.4 0.4 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <direction>0.5 0.5 -1</direction>
+    </light>
+
+    <!-- GUI Camera -->
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>-20 -20 15 0 0.4 0.785</pose>
+        <view_controller>orbit</view_controller>
+      </camera>
+    </gui>
+
+    <!-- Earth reference sphere (visual only) -->
+    <model name="earth_reference">
+      <static>true</static>
+      <pose>0 0 -6371000 0 0 0</pose>
+      <link name="earth_link">
+        <visual name="earth_visual">
+          <geometry>
+            <sphere>
+              <radius>6371000</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.2 0.4 0.8 0.3</ambient>
+            <diffuse>0.2 0.4 0.8 0.3</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- Chaser satellite (starts at "origin" - relative position) -->
+    <model name="chaser">
+      <pose>0 0 0  0 0 0</pose>
+      <link name="chaser_link">
+        <inertial>
+          <mass>100.0</mass>
+          <inertia>
+            <ixx>16.67</ixx>
+            <iyy>16.67</iyy>
+            <izz>16.67</izz>
+          </inertia>
+        </inertial>
+        
+        <!-- Main body collision -->
+        <collision name="chaser_collision">
+          <geometry>
+            <box><size>0.6 0.6 0.6</size></box>
+          </geometry>
+        </collision>
+        
+        <!-- Main spacecraft body (metallic blue) -->
+        <visual name="main_body">
+          <geometry>
+            <box><size>0.6 0.6 0.6</size></box>
+          </geometry>
+          <material>
+            <ambient>0.15 0.25 0.5 1</ambient>
+            <diffuse>0.2 0.35 0.65 1</diffuse>
+            <specular>0.9 0.9 0.9 1</specular>
+            <emissive>0.05 0.1 0.2 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Central docking cone (front) -->
+        <visual name="docking_cone">
+          <pose>0.35 0 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.15</radius><length>0.2</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.9 0.9 0.9 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Solar panels (left) -->
+        <visual name="solar_left">
+          <pose>0 0.45 0 0 0 0</pose>
+          <geometry>
+            <box><size>0.4 0.1 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.15 0.3 1</ambient>
+            <diffuse>0.15 0.2 0.4 1</diffuse>
+            <specular>0.6 0.6 0.8 1</specular>
+            <emissive>0.1 0.15 0.25 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Solar panels (right) -->
+        <visual name="solar_right">
+          <pose>0 -0.45 0 0 0 0</pose>
+          <geometry>
+            <box><size>0.4 0.1 0.8</size></box>
+          </geometry>
+          <material>
+            <ambient>0.1 0.15 0.3 1</ambient>
+            <diffuse>0.15 0.2 0.4 1</diffuse>
+            <specular>0.6 0.6 0.8 1</specular>
+            <emissive>0.1 0.15 0.25 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Antenna -->
+        <visual name="antenna">
+          <pose>0 0 0.45 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.02</radius><length>0.3</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Navigation lights -->
+        <visual name="nav_light_top">
+          <pose>0 0 0.32 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.03</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <emissive>0 0.8 0 1</emissive>
+          </material>
+        </visual>
+        
+        <visual name="nav_light_bottom">
+          <pose>0 0 -0.32 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.03</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>0.8 0 0 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Forward cluster (+X) -->
+        <visual name="thruster_fwd_1">
+          <pose>0.35 0.15 0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_2">
+          <pose>0.35 -0.15 0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_3">
+          <pose>0.35 0.15 -0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_4">
+          <pose>0.35 -0.15 -0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Aft cluster (-X) -->
+        <visual name="thruster_aft_1">
+          <pose>-0.35 0.15 0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_2">
+          <pose>-0.35 -0.15 0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_3">
+          <pose>-0.35 0.15 -0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_4">
+          <pose>-0.35 -0.15 -0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Port/Starboard (+Y/-Y) -->
+        <visual name="thruster_port_1">
+          <pose>0.15 0.35 0 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_port_2">
+          <pose>-0.15 0.35 0 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="thruster_starboard_1">
+          <pose>0.15 -0.35 0 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_starboard_2">
+          <pose>-0.15 -0.35 0 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Top/Bottom (+Z/-Z) -->
+        <visual name="thruster_top_1">
+          <pose>0.15 0 0.35 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_top_2">
+          <pose>-0.15 0 0.35 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="thruster_bottom_1">
+          <pose>0.15 0 -0.35 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_bottom_2">
+          <pose>-0.15 0 -0.35 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.03</radius><length>0.1</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.3 0.3 0.3 1</ambient>
+            <diffuse>0.4 0.4 0.4 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Thruster nozzle glow (emissive orange tips) -->
+        <visual name="thruster_glow_fwd">
+          <pose>0.42 0.15 0.15 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.025</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0.4 0 1</ambient>
+            <diffuse>1 0.5 0 1</diffuse>
+            <emissive>1 0.3 0 0.8</emissive>
+          </material>
+        </visual>
+        
+      </link>
+    </model>
+
+    <!-- Dock/Target station -->
+    <model name="dock">
+      <pose>80 30 15  0 0 0</pose>
+      <link name="dock_link">
+        <inertial>
+          <mass>500.0</mass>
+          <inertia>
+            <ixx>83.33</ixx>
+            <iyy>83.33</iyy>
+            <izz>83.33</izz>
+          </inertia>
+        </inertial>
+        
+        <!-- Main body collision -->
+        <collision name="dock_collision">
+          <geometry>
+            <box><size>1.2 1.2 1.2</size></box>
+          </geometry>
+        </collision>
+        
+        <!-- Central habitat module (white/silver) -->
+        <visual name="main_module">
+          <geometry>
+            <cylinder><radius>0.6</radius><length>1.5</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>0.95 0.95 0.95 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <emissive>0.1 0.1 0.1 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Docking port (orange/gold) -->
+        <visual name="docking_port">
+          <pose>-0.85 0 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.25</radius><length>0.2</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0.6 0.1 1</ambient>
+            <diffuse>1 0.7 0.2 1</diffuse>
+            <specular>0.9 0.9 0.9 1</specular>
+            <emissive>0.3 0.15 0 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Docking guide rings -->
+        <visual name="docking_ring_1">
+          <pose>-0.95 0 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.28</radius><length>0.03</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+            <emissive>0.8 0.8 0 1</emissive>
+          </material>
+        </visual>
+        <visual name="docking_ring_2">
+          <pose>-1.0 0 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.3</radius><length>0.02</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+            <emissive>0.8 0.8 0 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Solar arrays (large) -->
+        <visual name="solar_array_1">
+          <pose>0 1.2 0 0 0 0</pose>
+          <geometry>
+            <box><size>1.0 0.05 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>0.05 0.1 0.25 1</ambient>
+            <diffuse>0.1 0.15 0.35 1</diffuse>
+            <specular>0.7 0.7 0.9 1</specular>
+            <emissive>0.15 0.2 0.3 1</emissive>
+          </material>
+        </visual>
+        
+        <visual name="solar_array_2">
+          <pose>0 -1.2 0 0 0 0</pose>
+          <geometry>
+            <box><size>1.0 0.05 2.5</size></box>
+          </geometry>
+          <material>
+            <ambient>0.05 0.1 0.25 1</ambient>
+            <diffuse>0.1 0.15 0.35 1</diffuse>
+            <specular>0.7 0.7 0.9 1</specular>
+            <emissive>0.15 0.2 0.3 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- Radiators (thermal) -->
+        <visual name="radiator_1">
+          <pose>0.7 0 0.8 0 0.5 0</pose>
+          <geometry>
+            <box><size>0.6 1.5 0.02</size></box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.9 0.9 0.9 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="radiator_2">
+          <pose>0.7 0 -0.8 0 -0.5 0</pose>
+          <geometry>
+            <box><size>0.6 1.5 0.02</size></box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.7 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.9 0.9 0.9 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Communication dishes -->
+        <visual name="comm_dish_1">
+          <pose>0.8 0.4 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.05</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="comm_dish_2">
+          <pose>0.8 -0.4 0 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.2</radius><length>0.05</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.9 0.9 0.9 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Antennas -->
+        <visual name="antenna_main">
+          <pose>0 0 0.9 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.015</radius><length>0.6</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Status lights -->
+        <visual name="status_light_1">
+          <pose>0.4 0.4 0.4 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.04</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <emissive>0 1 0 1</emissive>
+          </material>
+        </visual>
+        
+        <visual name="status_light_2">
+          <pose>0.4 -0.4 0.4 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.04</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+            <emissive>0 1 0 1</emissive>
+          </material>
+        </visual>
+        
+        <visual name="status_light_3">
+          <pose>0.4 0.4 -0.4 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.04</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>1 0 0 1</emissive>
+          </material>
+        </visual>
+        
+        <visual name="status_light_4">
+          <pose>0.4 -0.4 -0.4 0 0 0</pose>
+          <geometry>
+            <sphere><radius>0.04</radius></sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <emissive>1 0 0 1</emissive>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Forward cluster -->
+        <visual name="thruster_fwd_1">
+          <pose>0.75 0.3 0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_2">
+          <pose>0.75 -0.3 0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_3">
+          <pose>0.75 0.3 -0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_fwd_4">
+          <pose>0.75 -0.3 -0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Aft cluster -->
+        <visual name="thruster_aft_1">
+          <pose>-0.75 0.3 0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_2">
+          <pose>-0.75 -0.3 0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_3">
+          <pose>-0.75 0.3 -0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_aft_4">
+          <pose>-0.75 -0.3 -0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.05</radius><length>0.15</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Lateral (Y-axis) -->
+        <visual name="thruster_port_1">
+          <pose>0.3 0.65 0.3 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_port_2">
+          <pose>-0.3 0.65 -0.3 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="thruster_starboard_1">
+          <pose>0.3 -0.65 0.3 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_starboard_2">
+          <pose>-0.3 -0.65 -0.3 1.5708 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <!-- THRUSTERS - Vertical (Z-axis) -->
+        <visual name="thruster_top_1">
+          <pose>0.3 0.3 0.65 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_top_2">
+          <pose>-0.3 -0.3 0.65 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <visual name="thruster_bottom_1">
+          <pose>0.3 0.3 -0.65 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <visual name="thruster_bottom_2">
+          <pose>-0.3 -0.3 -0.65 0 0 0</pose>
+          <geometry>
+            <cylinder><radius>0.04</radius><length>0.12</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>0.2 0.2 0.2 1</ambient>
+            <diffuse>0.3 0.3 0.3 1</diffuse>
+            <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        
+        <!-- Thruster glow effects -->
+        <visual name="thruster_glow_1">
+          <pose>0.85 0.3 0.3 0 1.5708 0</pose>
+          <geometry>
+            <cylinder><radius>0.035</radius><length>0.03</length></cylinder>
+          </geometry>
+          <material>
+            <ambient>1 0.5 0 1</ambient>
+            <diffuse>1 0.6 0 1</diffuse>
+            <emissive>1 0.4 0 0.9</emissive>
+          </material>
+        </visual>
+        
+      </link>
+    </model>
+
+    <!-- Realistic Orbital Controller Plugin -->
+    <plugin filename="realistic_orbital_controller" name="RealisticOrbitalController">
+      <target_model>chaser</target_model>
+      <dock_model>dock</dock_model>
+      <reach_distance>0.8</reach_distance>
+      <reach_velocity>0.15</reach_velocity>
+      
+      <!-- Orbital parameters (400 km LEO) -->
+      <orbital_altitude>400000.0</orbital_altitude>
+      
+      <!-- Thruster specifications -->
+      <chaser_thrust_max>2.5</chaser_thrust_max>
+      <dock_thrust_max>1.5</dock_thrust_max>
+      <chaser_isp>220.0</chaser_isp>  <!-- Hydrazine -->
+      <dock_isp>220.0</dock_isp>
+      
+      <!-- Physics features (enable for maximum realism) -->
+      <use_orbital_gravity>true</use_orbital_gravity>
+      <use_j2>false</use_j2>  <!-- Enable for long simulations -->
+      <use_drag>false</use_drag>  <!-- Enable for LEO decay modeling -->
+      
+      <!-- Control gains (tuned for Hill's equations) -->
+      <kp_pos>0.02</kp_pos>
+      <kd_pos>0.8</kd_pos>
+    </plugin>
+
+  </world>
+</sdf>

@@ -64,10 +64,14 @@ CMAKE_BINARY_DIR = /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build
 
 # The main recursive "all" target.
 all: CMakeFiles/thruster_controller.dir/all
+all: CMakeFiles/realistic_orbital_controller.dir/all
+all: CMakeFiles/vision_based_orbital_controller.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/thruster_controller.dir/codegen
+codegen: CMakeFiles/realistic_orbital_controller.dir/codegen
+codegen: CMakeFiles/vision_based_orbital_controller.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,6 +80,8 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/thruster_controller.dir/clean
+clean: CMakeFiles/realistic_orbital_controller.dir/clean
+clean: CMakeFiles/vision_based_orbital_controller.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -85,7 +91,7 @@ clean: CMakeFiles/thruster_controller.dir/clean
 CMakeFiles/thruster_controller.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=1,2 "Built target thruster_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=3,4 "Built target thruster_controller"
 .PHONY : CMakeFiles/thruster_controller.dir/all
 
 # Build rule for subdir invocation for target.
@@ -102,13 +108,77 @@ thruster_controller: CMakeFiles/thruster_controller.dir/rule
 # codegen rule for target.
 CMakeFiles/thruster_controller.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=1,2 "Finished codegen for target thruster_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=3,4 "Finished codegen for target thruster_controller"
 .PHONY : CMakeFiles/thruster_controller.dir/codegen
 
 # clean rule for target.
 CMakeFiles/thruster_controller.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/thruster_controller.dir/build.make CMakeFiles/thruster_controller.dir/clean
 .PHONY : CMakeFiles/thruster_controller.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/realistic_orbital_controller.dir
+
+# All Build rule for target.
+CMakeFiles/realistic_orbital_controller.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=1,2 "Built target realistic_orbital_controller"
+.PHONY : CMakeFiles/realistic_orbital_controller.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/realistic_orbital_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/realistic_orbital_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles 0
+.PHONY : CMakeFiles/realistic_orbital_controller.dir/rule
+
+# Convenience name for target.
+realistic_orbital_controller: CMakeFiles/realistic_orbital_controller.dir/rule
+.PHONY : realistic_orbital_controller
+
+# codegen rule for target.
+CMakeFiles/realistic_orbital_controller.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=1,2 "Finished codegen for target realistic_orbital_controller"
+.PHONY : CMakeFiles/realistic_orbital_controller.dir/codegen
+
+# clean rule for target.
+CMakeFiles/realistic_orbital_controller.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/realistic_orbital_controller.dir/build.make CMakeFiles/realistic_orbital_controller.dir/clean
+.PHONY : CMakeFiles/realistic_orbital_controller.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/vision_based_orbital_controller.dir
+
+# All Build rule for target.
+CMakeFiles/vision_based_orbital_controller.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=5,6 "Built target vision_based_orbital_controller"
+.PHONY : CMakeFiles/vision_based_orbital_controller.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/vision_based_orbital_controller.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/vision_based_orbital_controller.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles 0
+.PHONY : CMakeFiles/vision_based_orbital_controller.dir/rule
+
+# Convenience name for target.
+vision_based_orbital_controller: CMakeFiles/vision_based_orbital_controller.dir/rule
+.PHONY : vision_based_orbital_controller
+
+# codegen rule for target.
+CMakeFiles/vision_based_orbital_controller.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles --progress-num=5,6 "Finished codegen for target vision_based_orbital_controller"
+.PHONY : CMakeFiles/vision_based_orbital_controller.dir/codegen
+
+# clean rule for target.
+CMakeFiles/vision_based_orbital_controller.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/clean
+.PHONY : CMakeFiles/vision_based_orbital_controller.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
