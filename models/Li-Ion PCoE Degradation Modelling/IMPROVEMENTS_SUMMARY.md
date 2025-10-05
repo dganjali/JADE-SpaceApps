@@ -1,4 +1,4 @@
-# 🚀 **Battery RUL Model Improvements for 80%+ Accuracy**
+# **Key Battery RUL Model Improvements for improved accuracy**
 
 ## **Key Improvements Implemented:**
 
@@ -88,4 +88,5 @@
 python run_pipeline.py --step all
 ```
 
-**All improvements are implemented and ready for 80%+ accuracy!** 🎯
+
+**All improvements are implemented and ready for improved accuracy** 
