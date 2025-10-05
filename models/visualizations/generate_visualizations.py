@@ -9,6 +9,7 @@ from typing import Dict, Iterable, Tuple
 
 import joblib
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib import ticker
@@ -321,6 +322,95 @@ def plot_cv_metric_bars(cv_metrics: Dict[str, float]) -> Path:
     return output_path
 
 
+
+
+def plot_soh_capacity_trajectories(df: pd.DataFrame, top_n: int = 4) -> Path:
+    """Plot SOH and normalized capacity trajectories for the longest-lived batteries."""
+    lifespan = df.groupby('battery_id')['cycle_index'].max().sort_values(ascending=False)
+    top_ids = lifespan.head(top_n).index.tolist()
+
+    cmap = cm.get_cmap('plasma')
+    colors = cmap(np.linspace(0.2, 0.85, len(top_ids)))
+
+    fig, ax = plt.subplots(figsize=(9.5, 5.5))
+    for color, battery_id in zip(colors, top_ids):
+        subset = df[df['battery_id'] == battery_id].sort_values('cycle_index')
+        if subset.empty:
+            continue
+        capacity_norm = subset['capacity'] / subset['capacity'].iloc[0]
+        ax.plot(subset['cycle_index'], subset['soh'], color=color, linewidth=2.2,
+                label=f"{battery_id} SOH")
+        ax.plot(subset['cycle_index'], capacity_norm, color=color, linewidth=1.8,
+                linestyle='--', label=f"{battery_id} Capacity (norm)")
+
+    configure_axes(ax, 'SOH vs Normalized Capacity Trajectories', 'Cycle Index', 'Normalized value')
+    ax.set_ylim(0.6, 1.1)
+    ax.legend(ncol=2, frameon=True, facecolor='white', edgecolor='#d1d1d1', fontsize=9)
+
+    output_path = FIGURES_DIR / 'soh_capacity_trajectories.png'
+    fig.tight_layout()
+    fig.savefig(output_path)
+    plt.close(fig)
+    return output_path
+
+
+def plot_mean_rul_capacity_trends(df: pd.DataFrame) -> Path:
+    """Plot dataset-level RUL, SOH, and normalized capacity trends across cycles."""
+    agg = df.groupby('cycle_index').agg(
+        mean_rul=('rul_cycles', 'mean'),
+        std_rul=('rul_cycles', 'std'),
+        mean_soh=('soh', 'mean'),
+        mean_capacity=('capacity', 'mean'),
+        sample_count=('battery_id', 'nunique')
+    ).dropna(subset=['mean_rul', 'mean_soh', 'mean_capacity'])
+
+    if agg.empty:
+        raise ValueError('Aggregated trend data is empty; verify training summary contents.')
+
+    cycles = agg.index.values
+    mean_rul = agg['mean_rul'].values
+    std_rul = np.nan_to_num(agg['std_rul'].values, nan=0.0)
+
+    capacity_norm = agg['mean_capacity'] / agg['mean_capacity'].iloc[0]
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9.5, 7.5), sharex=True)
+
+    ax1.plot(cycles, mean_rul, color='#1b9e77', linewidth=2.3, label='Mean RUL')
+    ax1.fill_between(cycles, mean_rul - std_rul, mean_rul + std_rul, color='#1b9e77', alpha=0.15,
+                     label='+/-1 std')
+    configure_axes(ax1, 'Remaining Useful Life Trend', ylabel='RUL (cycles)')
+    ax1.legend(frameon=True, facecolor='white', edgecolor='#d1d1d1')
+
+    ax2.plot(cycles, agg['mean_soh'], color='#2c7fb8', linewidth=2.1, label='Mean SOH')
+    ax2.plot(cycles, capacity_norm, color='#fdae61', linewidth=2.1, linestyle='--',
+             label='Mean Capacity (normalized)')
+    configure_axes(ax2, 'SOH and Capacity Fade', 'Cycle Index', 'Normalized value')
+    ax2.legend(frameon=True, facecolor='white', edgecolor='#d1d1d1')
+
+    fig.suptitle('Dataset-Level Degradation Trends', fontsize=15, fontweight='bold', x=0.05, ha='left')
+
+    output_path = FIGURES_DIR / 'rul_soh_capacity_trends.png'
+    fig.tight_layout(rect=[0, 0, 1, 0.97])
+    fig.savefig(output_path)
+    plt.close(fig)
+    return output_path
+
+
+def plot_rul_soh_hexbin(df: pd.DataFrame) -> Path:
+    """Show joint distribution of SOH and RUL using a hexbin density plot."""
+    fig, ax = plt.subplots(figsize=(8, 6.5))
+    hb = ax.hexbin(df['soh'], df['rul_cycles'], gridsize=45, cmap='magma',
+                   mincnt=5, linewidths=0.2)
+    configure_axes(ax, 'SOH vs RUL Density', 'SOH', 'RUL (cycles)')
+    cbar = fig.colorbar(hb, ax=ax)
+    cbar.set_label('Sample density')
+
+    output_path = FIGURES_DIR / 'soh_rul_hexbin.png'
+    fig.tight_layout()
+    fig.savefig(output_path)
+    plt.close(fig)
+    return output_path
+
 # ---------------------------------------------------------------------------
 # Main orchestration
 # ---------------------------------------------------------------------------
@@ -337,6 +427,12 @@ def main() -> None:
         baseline_metrics = {"label": "Baseline", **performance_summary["test_metrics"]}
 
     training_summary = joblib.load(TRAINING_SUMMARY_FILE)
+
+    df_engineered = training_summary["data"].get("engineered_dataframe")
+    if isinstance(df_engineered, pd.DataFrame):
+        df_engineered = df_engineered.copy()
+    else:
+        df_engineered = pd.DataFrame(df_engineered)
 
     # Current test metrics
     current_metrics = performance_summary["test_metrics"]
@@ -370,6 +466,9 @@ def main() -> None:
     outputs = [
         plot_metric_improvement(baseline_metrics, current_metrics),
         plot_metric_radar(baseline_metrics, current_metrics),
+        plot_soh_capacity_trajectories(df_engineered),
+        plot_mean_rul_capacity_trends(df_engineered),
+        plot_rul_soh_hexbin(df_engineered),
         plot_predictions_vs_truth(y_true, y_pred),
         plot_residual_distribution(residuals),
         plot_residuals_vs_true_rul(y_true, residuals),
