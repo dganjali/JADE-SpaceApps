@@ -273,7 +273,8 @@ class BatteryRULTrainer:
 
         benchmarks = {
             'mae': {'good': 20.0, 'acceptable': 50.0, 'poor': 100.0},
-            'rmse': {'good': 40.0, 'acceptable': 100.0, 'poor': 150.0}
+            'rmse': {'good': 40.0, 'acceptable': 100.0, 'poor': 150.0},
+            'smape': {'good': 25.0, 'acceptable': 60.0, 'poor': 200.0}
         }
 
         def normalize(value: Optional[float], good: float, poor: float) -> Optional[float]:
@@ -288,12 +289,13 @@ class BatteryRULTrainer:
 
         mae_score = normalize(mae, benchmarks['mae']['good'], benchmarks['mae']['poor'])
         rmse_score = normalize(rmse, benchmarks['rmse']['good'], benchmarks['rmse']['poor'])
-        component_scores = [score for score in (mae_score, rmse_score) if score is not None]
+        smape_score = normalize(smape, benchmarks['smape']['good'], benchmarks['smape']['poor'])
+        component_scores = [score for score in (mae_score, rmse_score, smape_score) if score is not None]
         accuracy_percent = round(sum(component_scores) / len(component_scores) * 100, 2) if component_scores else None
 
         if mae is None:
             rating = 'unknown'
-        elif mae < benchmarks['mae']['good']:
+        elif mae < benchmarks['mae']['good'] and (smape is None or smape < benchmarks['smape']['acceptable']):
             rating = 'good'
         elif mae < benchmarks['mae']['acceptable']:
             rating = 'acceptable'
@@ -331,7 +333,10 @@ class BatteryRULTrainer:
                     'value': float(rmse) if rmse is not None else None,
                     'normalized_score': round(rmse_score, 4) if rmse_score is not None else None
                 },
-                'smape': float(smape) if smape is not None else None
+                'smape': {
+                    'value': float(smape) if smape is not None else None,
+                    'normalized_score': round(smape_score, 4) if smape_score is not None else None
+                }
             },
             'cv_statistics': cv_stats,
             'benchmarks': benchmarks,
