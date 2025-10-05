@@ -53,7 +53,7 @@ plt.rcParams.update(
 BENCHMARKS = {
     "mae": {"good": 20.0, "acceptable": 50.0, "poor": 100.0},
     "rmse": {"good": 40.0, "acceptable": 100.0, "poor": 150.0},
-    # sMAPE is treated in percentage terms – values above 50% are typically concerning
+    # sMAPE is treated in percentage terms - values above 50% are typically concerning
     "smape": {"good": 25.0, "acceptable": 50.0, "poor": 200.0},
 }
 
