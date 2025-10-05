@@ -138,14 +138,6 @@
     </joint>
 
     <allow_auto_disable>false</allow_auto_disable>
-    <static>false</static> <!-- Target can move -->
-
-    <!-- Random movement controller -->
-    <plugin filename="librandom_movement_controller.dylib" name="random_movement_controller::Plugin">
-      <movement_rate>0.3</movement_rate>
-      <max_force>3.0</max_force>
-      <movement_radius>3.0</movement_radius>
-      <center_position>5 0 0</center_position>
-    </plugin>
+    <static>true</static> <!-- Target is stationary -->
   </model>
 </sdf>

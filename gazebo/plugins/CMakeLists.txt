@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(thruster_controller)
+project(empty_plugins)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -58,30 +58,6 @@ if (gz-plugin_FOUND)
   set(GZ_PLUGIN_TARGET gz-plugin::gz-plugin)
   message(STATUS "Found gz-plugin")
 endif()
-# gz-plugin is optional here; the register header is header-only macro, but link if present
 
-add_library(thruster_controller SHARED src/thruster_controller.cc)
-target_link_libraries(thruster_controller PRIVATE ${GZ_SIM_TARGET} ${GZ_TRANSPORT_TARGET} ${GZ_MATH_TARGET} ${GZ_MSGS_TARGET})
-if (GZ_PLUGIN_TARGET)
-  target_link_libraries(thruster_controller PRIVATE ${GZ_PLUGIN_TARGET})
-endif()
-
-add_library(docking_controller SHARED src/docking_controller.cc)
-target_link_libraries(docking_controller PRIVATE ${GZ_SIM_TARGET} ${GZ_TRANSPORT_TARGET} ${GZ_MATH_TARGET} ${GZ_MSGS_TARGET})
-if (GZ_PLUGIN_TARGET)
-  target_link_libraries(docking_controller PRIVATE ${GZ_PLUGIN_TARGET})
-endif()
-
-add_library(realistic_thruster_controller SHARED src/realistic_thruster_controller.cc)
-target_link_libraries(realistic_thruster_controller PRIVATE ${GZ_SIM_TARGET} ${GZ_TRANSPORT_TARGET} ${GZ_MATH_TARGET} ${GZ_MSGS_TARGET})
-if (GZ_PLUGIN_TARGET)
-  target_link_libraries(realistic_thruster_controller PRIVATE ${GZ_PLUGIN_TARGET})
-endif()
-
-add_library(random_movement_controller SHARED src/random_movement_controller.cc)
-target_link_libraries(random_movement_controller PRIVATE ${GZ_SIM_TARGET} ${GZ_TRANSPORT_TARGET} ${GZ_MATH_TARGET} ${GZ_MSGS_TARGET})
-if (GZ_PLUGIN_TARGET)
-  target_link_libraries(random_movement_controller PRIVATE ${GZ_PLUGIN_TARGET})
-endif()
-
-install(TARGETS thruster_controller docking_controller realistic_thruster_controller random_movement_controller DESTINATION lib)
+# No plugins to build - all movement control removed
+message(STATUS "No plugins to build - all movement control has been removed")

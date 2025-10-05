@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <sdf version="1.9">
   <world name="leo_world">
-    <!-- Microgravity approximation: near-zero gravity -->
+    <!-- Zero gravity for space simulation -->
   <gravity>0 0 0</gravity>
 
     <atmosphere type="adiabatic"/>
@@ -77,16 +77,16 @@
       </attenuation>
     </light>
 
-    <!-- Add the main satellite (AstroSat) -->
+    <!-- Add the main satellite (AstroSat) at visible altitude -->
     <include>
       <uri>file:///Users/dganjali/GitHub/JADE-SpaceApps/gazebo/models/satellite</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>0 0 5 0 0 0</pose> <!-- 5 meters altitude for visibility -->
     </include>
 
-    <!-- Add the target docking station (AstroDock) -->
+    <!-- Add the target docking station (AstroDock) at slightly different position -->
     <include>
       <uri>file:///Users/dganjali/GitHub/JADE-SpaceApps/gazebo/models/astro_dock</uri>
-      <pose>5 0 0 0 0 0</pose>
+      <pose>5 0 5 0 0 0</pose> <!-- 5 meters separation -->
     </include>
 
   </world>

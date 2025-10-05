@@ -243,17 +243,5 @@
     <allow_auto_disable>false</allow_auto_disable>
     <static>false</static>
 
-    <!-- Realistic thruster controller system plugin -->
-  <plugin filename="librealistic_thruster_controller.dylib" name="realistic_thruster_controller::Plugin">
-      <target_model>astro_dock</target_model>
-      <max_thrust>8.0</max_thrust>
-      <thrust_efficiency>0.92</thrust_efficiency>
-      <fuel_mass>100.0</fuel_mass>
-      <isp>280.0</isp>
-      <kp_linear>0.8</kp_linear>
-      <kp_angular>1.2</kp_angular>
-      <kd_linear>0.15</kd_linear>
-      <kd_angular>0.25</kd_angular>
-    </plugin>
   </model>
 </sdf>
