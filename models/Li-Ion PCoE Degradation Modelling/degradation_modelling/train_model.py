@@ -264,24 +264,105 @@ class BatteryRULTrainer:
         
         return cv_metrics
     
+    def _evaluate_accuracy(self, results: Dict, cv_results: Optional[Dict]) -> Dict:
+        '''Generate an accuracy analysis summary based on benchmark guidance.'''
+        test_metrics = results.get('test_metrics', {}) or {}
+        mae = test_metrics.get('mae')
+        rmse = test_metrics.get('rmse')
+        smape = test_metrics.get('smape')
+
+        benchmarks = {
+            'mae': {'good': 20.0, 'acceptable': 50.0, 'poor': 100.0},
+            'rmse': {'good': 40.0, 'acceptable': 100.0, 'poor': 150.0}
+        }
+
+        def normalize(value: Optional[float], good: float, poor: float) -> Optional[float]:
+            if value is None:
+                return None
+            value = float(value)
+            if value <= good:
+                return 1.0
+            if value >= poor:
+                return 0.0
+            return (poor - value) / (poor - good)
+
+        mae_score = normalize(mae, benchmarks['mae']['good'], benchmarks['mae']['poor'])
+        rmse_score = normalize(rmse, benchmarks['rmse']['good'], benchmarks['rmse']['poor'])
+        component_scores = [score for score in (mae_score, rmse_score) if score is not None]
+        accuracy_percent = round(sum(component_scores) / len(component_scores) * 100, 2) if component_scores else None
+
+        if mae is None:
+            rating = 'unknown'
+        elif mae < benchmarks['mae']['good']:
+            rating = 'good'
+        elif mae < benchmarks['mae']['acceptable']:
+            rating = 'acceptable'
+        elif mae <= benchmarks['mae']['poor']:
+            rating = 'needs_improvement'
+        else:
+            rating = 'poor'
+
+        cv_stats = {
+            'mae_mean': None,
+            'mae_std': None,
+            'rmse_mean': None,
+            'rmse_std': None,
+            'smape_mean': None,
+            'smape_std': None
+        }
+        if cv_results is not None:
+            for metric in ('mae', 'rmse', 'smape'):
+                mean_key = f'cv_{metric}_mean'
+                std_key = f'cv_{metric}_std'
+                if mean_key in cv_results and cv_results[mean_key] is not None:
+                    cv_stats[f'{metric}_mean'] = float(cv_results[mean_key])
+                if std_key in cv_results and cv_results[std_key] is not None:
+                    cv_stats[f'{metric}_std'] = float(cv_results[std_key])
+
+        accuracy_summary = {
+            'rating': rating,
+            'accuracy_percent': accuracy_percent,
+            'components': {
+                'mae': {
+                    'value': float(mae) if mae is not None else None,
+                    'normalized_score': round(mae_score, 4) if mae_score is not None else None
+                },
+                'rmse': {
+                    'value': float(rmse) if rmse is not None else None,
+                    'normalized_score': round(rmse_score, 4) if rmse_score is not None else None
+                },
+                'smape': float(smape) if smape is not None else None
+            },
+            'cv_statistics': cv_stats,
+            'benchmarks': benchmarks,
+            'notes': [
+                'Good RUL accuracy: MAE < 20 cycles, RMSE < 40 cycles.',
+                'Acceptable performance: MAE < 50 cycles, RMSE < 100 cycles.',
+                'Cross-validation averages across folds; held-out test reflects single-shot performance.',
+                'Early-cycle predictions have higher uncertainty and some batteries degrade irregularly.'
+            ]
+        }
+
+        return accuracy_summary
+
     def save_results(self, results: Dict, cv_results: Optional[Dict] = None,
                      training_summary: Optional[Dict] = None):
         """Save training results, model artifacts, and consolidated summary."""
         logger.info("Saving results and artifacts")
-        
+
         # Save model
         self.model.save_model(self.model_dir)
-        
+
         # Save feature schema
         feature_schema = {
             'sequence_columns': self.sequence_columns,
             'feature_columns': self.feature_columns,
             'sequence_length': self.sequence_length
         }
-        
+
         with open(os.path.join(self.model_dir, 'feature_schema.json'), 'w') as f:
             json.dump(feature_schema, f, indent=2)
-        
+
         # Save metrics (convert numpy arrays to lists for JSON serialization)
         def convert_numpy(obj):
             if isinstance(obj, np.ndarray):
@@ -296,23 +377,35 @@ class BatteryRULTrainer:
                 return [convert_numpy(item) for item in obj]
             else:
                 return obj
-        
+
+        accuracy_summary = self._evaluate_accuracy(results, cv_results)
+
         results_to_save = dict(results)
-        if cv_results:
+        if cv_results is not None:
             results_to_save['cv_metrics'] = cv_results
-        
+        results_to_save['accuracy_analysis'] = accuracy_summary
+
         results_serializable = convert_numpy(results_to_save)
-        
+
         with open(os.path.join(self.model_dir, 'metrics.json'), 'w') as f:
             json.dump(results_serializable, f, indent=2)
-        
+
+        performance_summary = {
+            'test_metrics': convert_numpy(results.get('test_metrics', {})),
+            'cv_metrics': convert_numpy(cv_results) if cv_results is not None else None,
+            'accuracy_analysis': convert_numpy(accuracy_summary)
+        }
+
+        with open(os.path.join(self.model_dir, 'performance_summary.json'), 'w') as f:
+            json.dump(performance_summary, f, indent=2)
+
         if training_summary is not None:
             summary_path = os.path.join(self.model_dir, 'training_summary.joblib')
             joblib.dump(training_summary, summary_path, compress=3)
             logger.info(f"Training summary saved to {summary_path}")
-        
+
         logger.info(f"Results saved to {self.model_dir}")
-    
+
     def run_full_pipeline(self, data_file: str, use_cv: bool = True) -> Dict:
         """Run the complete training pipeline."""
         logger.info("Starting full training pipeline")
