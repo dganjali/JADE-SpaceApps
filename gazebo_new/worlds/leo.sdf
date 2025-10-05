@@ -43,7 +43,7 @@
     <!-- GUI camera settings -->
     <gui fullscreen="0">
       <camera name="user_camera">
-        <pose>-10 -5 5 0 0.3 0.5</pose>
+        <pose>-15 -15 10 0 0.4 0.8</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -64,12 +64,12 @@
     <!-- Include models (look for them in GZ resource path) -->
     <include>
       <uri>model://dock</uri>
-      <pose>0 0 0 0 0 0</pose>
+      <pose>15 5 3 0 0 0</pose> <!-- dock starts at distance ~16 meters -->
     </include>
 
     <include>
       <uri>model://chaser</uri>
-      <pose>-5 0 0 0 0 0</pose> <!-- starts ~5 meters away -->
+      <pose>0 0 0 0 0 0</pose> <!-- chaser starts at origin -->
     </include>
 
     <!-- System plugin: thruster controller -->
@@ -77,11 +77,11 @@
       <!-- controller parameters -->
       <target_model>chaser</target_model>
       <dock_model>dock</dock_model>
-      <reach_distance>0.3</reach_distance> <!-- success threshold (meters) -->
-      <kp>1.5</kp>    <!-- proportional gain (tuning) -->
-      <kd>0.8</kd>    <!-- derivative gain (tuning) -->
-      <max_force>15.0</max_force> <!-- N, adjust for mass -->
-      <dock_init_speed>0.2</dock_init_speed> <!-- dock initial random speed (m/s) -->
+      <reach_distance>0.8</reach_distance> <!-- success threshold (meters) -->
+      <kp>1.0</kp>    <!-- proportional gain (gentler approach) -->
+      <kd>1.5</kd>    <!-- derivative gain (more damping for smooth approach) -->
+      <max_force>8.0</max_force> <!-- N, reduced for careful approach -->
+      <dock_thrust_force>6.0</dock_thrust_force> <!-- N, dock's continuous thrust -->
     </plugin>
 
   </world>

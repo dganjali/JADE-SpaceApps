@@ -126,28 +126,30 @@ gz sim worlds/leo.sdf
 
 1. The simulation will start with:
    - A large Earth sphere in the background (for visual reference)
-   - The **dock** (orange cube) at the origin
-   - The **chaser** (blue box) positioned 5 meters away on the X-axis
+   - The **chaser** (blue box) at the origin (0, 0, 0)
+   - The **dock** (orange cube) positioned ~16 meters away at (15, 5, 3)
 
-2. The dock will begin moving with a random velocity (~0.2 m/s)
+2. The dock will begin moving with a random velocity (~0.5 m/s) in a random direction
 
-3. The chaser will automatically activate its thruster controller and navigate toward the dock
+3. The chaser will automatically activate its thruster controller and pursue the moving dock
 
-4. Console output will show:
+4. Watch the dramatic chase as the chaser intercepts the dock!
+
+5. Console output will show:
    - Initial configuration messages
-   - Periodic distance and force updates
-   - Success message when docking is achieved (distance < 0.3m)
+   - Periodic distance and force updates every 0.2 seconds
+   - Success message when docking is achieved (distance < 0.5m)
 
 ## Controller Parameters
 
 You can tune the controller by editing `worlds/leo.sdf`. Key parameters in the `<plugin>` section:
 
 ```xml
-<reach_distance>0.3</reach_distance>      <!-- Success threshold in meters -->
-<kp>1.5</kp>                               <!-- Proportional gain -->
-<kd>0.8</kd>                               <!-- Derivative gain -->
-<max_force>15.0</max_force>                <!-- Maximum thruster force (N) -->
-<dock_init_speed>0.2</dock_init_speed>     <!-- Dock's initial random speed (m/s) -->
+<reach_distance>0.5</reach_distance>      <!-- Success threshold in meters -->
+<kp>2.0</kp>                               <!-- Proportional gain -->
+<kd>1.2</kd>                               <!-- Derivative gain -->
+<max_force>20.0</max_force>                <!-- Maximum thruster force (N) -->
+<dock_init_speed>0.5</dock_init_speed>     <!-- Dock's initial random speed (m/s) -->
 ```
 
 ### Tuning Tips
