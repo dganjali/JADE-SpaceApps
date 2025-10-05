@@ -4,9 +4,9 @@ Edit this file to match your arm measurements and camera intrinsics.
 """
 
 # Arm link lengths in cm. For a yaw + 2-pitch arm use P1 (shoulder->elbow), P2 (elbow->wrist), P3 (wrist->gripper offset)
-P1 = 12.0
-P2 = 12.3
-P3 = 8.0
+P1 = 6.264
+P2 = 4.934
+P3 = 0.0
 
 # Degrees of freedom description
 # Example: yaw + two pitches + claw
