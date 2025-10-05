@@ -200,6 +200,43 @@ vision_based_orbital_controller/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vision_based_orbital_controller.dir/build.make CMakeFiles/vision_based_orbital_controller.dir/build
 .PHONY : vision_based_orbital_controller/fast
 
+#=============================================================================
+# Target rules for targets named advanced_orbital_controller
+
+# Build rule for target.
+advanced_orbital_controller: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 advanced_orbital_controller
+.PHONY : advanced_orbital_controller
+
+# fast build rule for target.
+advanced_orbital_controller/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_orbital_controller.dir/build.make CMakeFiles/advanced_orbital_controller.dir/build
+.PHONY : advanced_orbital_controller/fast
+
+src/advanced_orbital_controller.o: src/advanced_orbital_controller.cpp.o
+.PHONY : src/advanced_orbital_controller.o
+
+# target to build an object file
+src/advanced_orbital_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_orbital_controller.dir/build.make CMakeFiles/advanced_orbital_controller.dir/src/advanced_orbital_controller.cpp.o
+.PHONY : src/advanced_orbital_controller.cpp.o
+
+src/advanced_orbital_controller.i: src/advanced_orbital_controller.cpp.i
+.PHONY : src/advanced_orbital_controller.i
+
+# target to preprocess a source file
+src/advanced_orbital_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_orbital_controller.dir/build.make CMakeFiles/advanced_orbital_controller.dir/src/advanced_orbital_controller.cpp.i
+.PHONY : src/advanced_orbital_controller.cpp.i
+
+src/advanced_orbital_controller.s: src/advanced_orbital_controller.cpp.s
+.PHONY : src/advanced_orbital_controller.s
+
+# target to generate assembly for a file
+src/advanced_orbital_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_orbital_controller.dir/build.make CMakeFiles/advanced_orbital_controller.dir/src/advanced_orbital_controller.cpp.s
+.PHONY : src/advanced_orbital_controller.cpp.s
+
 src/realistic_orbital_controller.o: src/realistic_orbital_controller.cpp.o
 .PHONY : src/realistic_orbital_controller.o
 
@@ -284,9 +321,13 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... advanced_orbital_controller"
 	@echo "... realistic_orbital_controller"
 	@echo "... thruster_controller"
 	@echo "... vision_based_orbital_controller"
+	@echo "... src/advanced_orbital_controller.o"
+	@echo "... src/advanced_orbital_controller.i"
+	@echo "... src/advanced_orbital_controller.s"
 	@echo "... src/realistic_orbital_controller.o"
 	@echo "... src/realistic_orbital_controller.i"
 	@echo "... src/realistic_orbital_controller.s"

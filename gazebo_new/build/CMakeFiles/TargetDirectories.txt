@@ -1,6 +1,7 @@
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/thruster_controller.dir
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/realistic_orbital_controller.dir
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/vision_based_orbital_controller.dir
+/Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/advanced_orbital_controller.dir
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/edit_cache.dir
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/rebuild_cache.dir
 /Users/dganjali/GitHub/JADE-SpaceApps/gazebo_new/build/CMakeFiles/list_install_components.dir

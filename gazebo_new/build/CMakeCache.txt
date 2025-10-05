@@ -506,8 +506,14 @@ ZeroMQ_LIBRARY_zmq:FILEPATH=/opt/homebrew/Cellar/zeromq/4.3.5_2/lib/libzmq.dylib
 //The directory containing a CMake configuration file for absl.
 absl_DIR:PATH=/opt/homebrew/lib/cmake/absl
 
+//Dependencies for the target
+advanced_orbital_controller_LIB_DEPENDS:STATIC=general;gz-sim::gz-sim;
+
 //The directory containing a CMake configuration file for assimp.
 assimp_DIR:PATH=/opt/homebrew/lib/cmake/assimp-6.0
+
+//Dependencies for the target
+docking_dashboard_LIB_DEPENDS:STATIC=general;gz-gui::gz-gui;
 
 //The directory containing a CMake configuration file for fmt.
 fmt_DIR:PATH=/opt/homebrew/lib/cmake/fmt

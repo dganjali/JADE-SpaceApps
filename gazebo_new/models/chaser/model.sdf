@@ -40,6 +40,63 @@
         <material><ambient>0.9 0.2 0.2 1</ambient></material>
       </visual>
 
+      <!-- Robotic Arm Assembly -->
+      <!-- Arm Base -->
+      <visual name="arm_base">
+        <pose>0.4 0 0 0 0 0</pose>
+        <geometry><cylinder><radius>0.06</radius><length>0.08</length></cylinder></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
+      </visual>
+
+      <!-- Lower Arm Segment -->
+      <visual name="arm_lower">
+        <pose>0.55 0 0 0 1.5708 0</pose>
+        <geometry><cylinder><radius>0.03</radius><length>0.25</length></cylinder></geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+      </visual>
+
+      <!-- Elbow Joint -->
+      <visual name="arm_elbow">
+        <pose>0.675 0 0 0 0 0</pose>
+        <geometry><sphere><radius>0.04</radius></sphere></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
+      </visual>
+
+      <!-- Upper Arm Segment -->
+      <visual name="arm_upper">
+        <pose>0.8 0 0 0 1.5708 0</pose>
+        <geometry><cylinder><radius>0.025</radius><length>0.2</length></cylinder></geometry>
+        <material><ambient>0.7 0.7 0.7 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse></material>
+      </visual>
+
+      <!-- Wrist Joint -->
+      <visual name="arm_wrist">
+        <pose>0.9 0 0 0 0 0</pose>
+        <geometry><sphere><radius>0.035</radius></sphere></geometry>
+        <material><ambient>0.5 0.5 0.5 1</ambient><diffuse>0.6 0.6 0.6 1</diffuse></material>
+      </visual>
+
+      <!-- Gripper Base -->
+      <visual name="gripper_base">
+        <pose>0.95 0 0 0 1.5708 0</pose>
+        <geometry><cylinder><radius>0.02</radius><length>0.06</length></cylinder></geometry>
+        <material><ambient>0.3 0.3 0.3 1</ambient><diffuse>0.4 0.4 0.4 1</diffuse></material>
+      </visual>
+
+      <!-- Left Gripper Finger -->
+      <visual name="gripper_left">
+        <pose>0.98 0.03 0 0 0 0</pose>
+        <geometry><box><size>0.06 0.015 0.04</size></box></geometry>
+        <material><ambient>0.9 0.6 0.1 1</ambient><diffuse>1.0 0.7 0.2 1</diffuse></material>
+      </visual>
+
+      <!-- Right Gripper Finger -->
+      <visual name="gripper_right">
+        <pose>0.98 -0.03 0 0 0 0</pose>
+        <geometry><box><size>0.06 0.015 0.04</size></box></geometry>
+        <material><ambient>0.9 0.6 0.1 1</ambient><diffuse>1.0 0.7 0.2 1</diffuse></material>
+      </visual>
+
     </link>
   </model>
 </sdf>
