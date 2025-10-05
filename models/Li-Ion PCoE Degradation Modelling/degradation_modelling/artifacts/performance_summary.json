@@ -1,0 +1,64 @@
+{
+  "test_metrics": {
+    "mae": 3.0106914043426514,
+    "rmse": 7.643799666386067,
+    "smape": 199.98045937616027
+  },
+  "cv_metrics": {
+    "cv_mae_mean": 13.793239188194274,
+    "cv_mae_std": 9.910119958480665,
+    "cv_rmse_mean": 21.388013597304713,
+    "cv_rmse_std": 15.376217950062118,
+    "cv_smape_mean": 179.8282404610057,
+    "cv_smape_std": 25.797669497825904
+  },
+  "accuracy_analysis": {
+    "rating": "acceptable",
+    "accuracy_percent": 66.67,
+    "components": {
+      "mae": {
+        "value": 3.0106914043426514,
+        "normalized_score": 1.0
+      },
+      "rmse": {
+        "value": 7.643799666386067,
+        "normalized_score": 1.0
+      },
+      "smape": {
+        "value": 199.98045937616027,
+        "normalized_score": 0.0001
+      }
+    },
+    "cv_statistics": {
+      "mae_mean": 13.793239188194274,
+      "mae_std": 9.910119958480665,
+      "rmse_mean": 21.388013597304713,
+      "rmse_std": 15.376217950062118,
+      "smape_mean": 179.8282404610057,
+      "smape_std": 25.797669497825904
+    },
+    "benchmarks": {
+      "mae": {
+        "good": 20.0,
+        "acceptable": 50.0,
+        "poor": 100.0
+      },
+      "rmse": {
+        "good": 40.0,
+        "acceptable": 100.0,
+        "poor": 150.0
+      },
+      "smape": {
+        "good": 25.0,
+        "acceptable": 60.0,
+        "poor": 200.0
+      }
+    },
+    "notes": [
+      "Good RUL accuracy: MAE < 20 cycles, RMSE < 40 cycles.",
+      "Acceptable performance: MAE < 50 cycles, RMSE < 100 cycles.",
+      "Cross-validation averages across folds; held-out test reflects single-shot performance.",
+      "Early-cycle predictions have higher uncertainty and some batteries degrade irregularly."
+    ]
+  }
+}
