@@ -25,9 +25,15 @@ logger = logging.getLogger(__name__)
 class BatteryRULTrainer:
     """Complete training pipeline for battery RUL prediction."""
     
-    def __init__(self, model_dir: str = "artifacts", sequence_length: int = 10):
+    def __init__(self, model_dir: str = "artifacts", sequence_length: int = 15, 
+                 window_size: int = 20, lstm_hidden_size: int = 128, 
+                 lstm_layers: int = 3, lstm_output_size: int = 64):
         self.model_dir = model_dir
         self.sequence_length = sequence_length
+        self.window_size = window_size
+        self.lstm_hidden_size = lstm_hidden_size
+        self.lstm_layers = lstm_layers
+        self.lstm_output_size = lstm_output_size
         self.model = None
         self.scalers = {}
         self.feature_columns = None
@@ -36,14 +42,19 @@ class BatteryRULTrainer:
         os.makedirs(model_dir, exist_ok=True)
     
     def load_and_prepare_data(self, data_file: str) -> pd.DataFrame:
-        """Load and prepare data for training."""
+        """Load and prepare data for training with quality improvements."""
         logger.info(f"Loading data from {data_file}")
         
         df = pd.read_csv(data_file)
         logger.info(f"Loaded {len(df)} cycles from {df['battery_id'].nunique()} batteries")
         
-        # Engineer features
-        df_engineered = engineer_all_features(df, sequence_length=self.sequence_length)
+        # Data quality improvements
+        df = self._apply_data_quality_filters(df)
+        
+        # Engineer features with improved parameters
+        df_engineered = engineer_all_features(df, 
+                                            window_size=self.window_size, 
+                                            sequence_length=self.sequence_length)
         
         # Define sequence and static feature columns
         self.sequence_columns = ['capacity', 'voltage_mean', 'temperature_mean', 'soh']
@@ -54,6 +65,39 @@ class BatteryRULTrainer:
         logger.info(f"Feature columns: {len(self.feature_columns)}")
         
         return df_engineered
+    
+    def _apply_data_quality_filters(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Apply data quality filters to improve model performance."""
+        logger.info("Applying data quality filters")
+        
+        initial_count = len(df)
+        
+        # Filter out batteries with too few cycles (< 50 cycles)
+        battery_cycle_counts = df.groupby('battery_id').size()
+        valid_batteries = battery_cycle_counts[battery_cycle_counts >= 50].index
+        df = df[df['battery_id'].isin(valid_batteries)]
+        
+        # Remove cycles with unrealistic capacity values
+        df = df[(df['capacity'] > 0) & (df['capacity'] < 5.0)]  # Reasonable capacity range
+        
+        # Remove cycles with extreme voltage values
+        df = df[(df['voltage_mean'] > 2.0) & (df['voltage_mean'] < 4.5)]
+        
+        # Remove cycles with extreme temperature values
+        df = df[(df['temperature_mean'] > 15) & (df['temperature_mean'] < 50)]
+        
+        # Smooth capacity readings with moving average (reduce noise)
+        df = df.sort_values(['battery_id', 'cycle_index'])
+        df['capacity_smoothed'] = df.groupby('battery_id')['capacity'].transform(
+            lambda x: x.rolling(window=3, center=True).mean().fillna(x)
+        )
+        df['capacity'] = df['capacity_smoothed']
+        df = df.drop('capacity_smoothed', axis=1)
+        
+        filtered_count = len(df)
+        logger.info(f"Data quality filtering: {initial_count} -> {filtered_count} cycles ({((initial_count-filtered_count)/initial_count)*100:.1f}% removed)")
+        
+        return df
     
     def prepare_sequences_and_features(self, df: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndarray, List[str]]:
         """Prepare sequences and features for training."""
@@ -78,8 +122,11 @@ class BatteryRULTrainer:
                 sequence = sequence_data[i-self.sequence_length:i]
                 target = battery_df.iloc[i]['rul_cycles']
                 
-                # Extract current cycle features
+                # Extract current cycle features and ensure numeric types
                 current_features = battery_df.iloc[i][self.feature_columns].values
+                
+                # Convert to numeric, replacing non-numeric values with NaN, then fill with 0
+                current_features = pd.Series(current_features).apply(pd.to_numeric, errors='coerce').fillna(0).values
                 
                 sequences.append(sequence)
                 features.append(current_features)
@@ -87,7 +134,7 @@ class BatteryRULTrainer:
                 battery_ids.append(battery_id)
         
         sequences = np.array(sequences)
-        features = np.array(features)
+        features = np.array(features, dtype=np.float64)
         targets = np.array(targets)
         
         logger.info(f"Prepared {len(sequences)} sequences")
@@ -133,7 +180,7 @@ class BatteryRULTrainer:
         logger.info("Training LSTM encoder...")
         lstm_history = self.model.train_lstm_encoder(
             X_seq_train, X_feat_train, y_train,
-            epochs=50, batch_size=32, learning_rate=0.001
+            epochs=100, batch_size=32, learning_rate=0.0005
         )
         
         # Extract LSTM features for GBM
@@ -234,9 +281,25 @@ class BatteryRULTrainer:
         with open(os.path.join(self.model_dir, 'feature_schema.json'), 'w') as f:
             json.dump(feature_schema, f, indent=2)
         
-        # Save metrics
+        # Save metrics (convert numpy arrays to lists for JSON serialization)
+        def convert_numpy(obj):
+            if isinstance(obj, np.ndarray):
+                return obj.tolist()
+            elif isinstance(obj, np.integer):
+                return int(obj)
+            elif isinstance(obj, np.floating):
+                return float(obj)
+            elif isinstance(obj, dict):
+                return {key: convert_numpy(value) for key, value in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy(item) for item in obj]
+            else:
+                return obj
+        
+        results_serializable = convert_numpy(results)
+        
         with open(os.path.join(self.model_dir, 'metrics.json'), 'w') as f:
-            json.dump(results, f, indent=2)
+            json.dump(results_serializable, f, indent=2)
         
         logger.info(f"Results saved to {self.model_dir}")
     

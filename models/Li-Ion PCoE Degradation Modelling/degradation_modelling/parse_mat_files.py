@@ -31,25 +31,33 @@ def load_mat_file(filepath: str) -> Dict:
         return None
 
 
-def extract_discharge_cycles(data: Dict) -> List[Dict]:
+def extract_discharge_cycles(data: Dict, battery_id: str) -> List[Dict]:
     """Extract discharge cycles from loaded .mat data."""
     cycles = []
     
-    if 'cycle' not in data:
+    # The data is stored under the battery ID key
+    if battery_id not in data:
         return cycles
     
-    cycle_array = data['cycle']
+    battery_data = data[battery_id]
     
-    for i, cycle in enumerate(cycle_array[0]):
-        cycle_data = cycle[0, 0]
-        
-        if cycle_data['type'][0] == 'discharge':
-            discharge_data = cycle_data['data'][0, 0]
+    # Check if it has the expected structure
+    if not isinstance(battery_data, np.ndarray):
+        return cycles
+    
+    # The data structure is battery_data[0, 0]['cycle'][0] - array of cycles
+    cycles_array = battery_data[0, 0]['cycle'][0]
+    
+    # Extract cycles from the battery data
+    for i, cycle in enumerate(cycles_array):
+        # Check if this is a discharge cycle
+        if cycle['type'][0] == 'discharge':
+            discharge_data = cycle['data'][0, 0]
             
             cycle_info = {
                 'cycle_index': i,
-                'ambient_temperature': cycle_data['ambient_temperature'][0, 0],
-                'time': cycle_data['time'][0, 0],
+                'ambient_temperature': cycle['ambient_temperature'][0, 0],
+                'time': cycle['time'][0, 0],
                 'voltage_measured': discharge_data['Voltage_measured'][0],
                 'current_measured': discharge_data['Current_measured'][0],
                 'temperature_measured': discharge_data['Temperature_measured'][0],
@@ -98,7 +106,7 @@ def process_single_battery(filepath: str) -> pd.DataFrame:
     if data is None:
         return pd.DataFrame()
     
-    discharge_cycles = extract_discharge_cycles(data)
+    discharge_cycles = extract_discharge_cycles(data, battery_id)
     if not discharge_cycles:
         logger.warning(f"No discharge cycles found in {battery_id}")
         return pd.DataFrame()

@@ -79,7 +79,14 @@ def run_model_training(input_file: str, model_dir: str) -> dict:
     logger.info("=== STEP 4: Model Training ===")
     
     # Initialize trainer
-    trainer = BatteryRULTrainer(model_dir=model_dir, sequence_length=10)
+    trainer = BatteryRULTrainer(
+        model_dir=model_dir,
+        sequence_length=15,
+        window_size=20,
+        lstm_hidden_size=128,
+        lstm_layers=3,
+        lstm_output_size=64
+    )
     
     # Run full pipeline
     results = trainer.run_full_pipeline(input_file, use_cv=True)

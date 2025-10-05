@@ -17,7 +17,7 @@ def compute_nominal_capacity(df: pd.DataFrame, initial_cycles: int = 5) -> float
     return initial_data['capacity'].max()
 
 
-def compute_soh_rul_for_battery(df: pd.DataFrame, eol_threshold: float = 0.8) -> pd.DataFrame:
+def compute_soh_rul_for_battery(df: pd.DataFrame, eol_threshold: float = 0.7) -> pd.DataFrame:
     """Compute SOH and RUL for a single battery."""
     battery_id = df['battery_id'].iloc[0]
     logger.info(f"Computing SOH/RUL for battery {battery_id}")
@@ -49,7 +49,7 @@ def compute_soh_rul_for_battery(df: pd.DataFrame, eol_threshold: float = 0.8) ->
     return df
 
 
-def compute_soh_rul_all_batteries(df: pd.DataFrame, eol_threshold: float = 0.8) -> pd.DataFrame:
+def compute_soh_rul_all_batteries(df: pd.DataFrame, eol_threshold: float = 0.7) -> pd.DataFrame:
     """Compute SOH and RUL for all batteries."""
     logger.info("Computing SOH and RUL for all batteries")
     
