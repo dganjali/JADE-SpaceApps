@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import torch
 import logging
-from typing import Dict, Tuple, List
+from typing import Dict, Tuple, List, Optional
 import joblib
 from tqdm import tqdm
 
@@ -264,8 +264,9 @@ class BatteryRULTrainer:
         
         return cv_metrics
     
-    def save_results(self, results: Dict):
-        """Save training results and model artifacts."""
+    def save_results(self, results: Dict, cv_results: Optional[Dict] = None,
+                     training_summary: Optional[Dict] = None):
+        """Save training results, model artifacts, and consolidated summary."""
         logger.info("Saving results and artifacts")
         
         # Save model
@@ -296,10 +297,19 @@ class BatteryRULTrainer:
             else:
                 return obj
         
-        results_serializable = convert_numpy(results)
+        results_to_save = dict(results)
+        if cv_results:
+            results_to_save['cv_metrics'] = cv_results
+        
+        results_serializable = convert_numpy(results_to_save)
         
         with open(os.path.join(self.model_dir, 'metrics.json'), 'w') as f:
             json.dump(results_serializable, f, indent=2)
+        
+        if training_summary is not None:
+            summary_path = os.path.join(self.model_dir, 'training_summary.joblib')
+            joblib.dump(training_summary, summary_path, compress=3)
+            logger.info(f"Training summary saved to {summary_path}")
         
         logger.info(f"Results saved to {self.model_dir}")
     
@@ -313,6 +323,7 @@ class BatteryRULTrainer:
         # Prepare sequences and features
         sequences, features, targets, battery_ids = self.prepare_sequences_and_features(df)
         
+        cv_results = None
         if use_cv:
             # Cross-validation
             cv_results = self.cross_validate(sequences, features, targets, battery_ids)
@@ -326,8 +337,47 @@ class BatteryRULTrainer:
         results = self.train_model(X_seq_train, X_feat_train, y_train, 
                                  X_seq_test, X_feat_test, y_test)
         
-        # Save results
-        self.save_results(results)
+        # Build consolidated training summary for downstream inspection
+        if features.ndim == 2:
+            feature_count = features.shape[1]
+        elif features.size:
+            feature_count = 1
+        else:
+            feature_count = 0
+
+        training_summary = {
+            'metadata': {
+                'data_file': data_file,
+                'sequence_length': self.sequence_length,
+                'window_size': self.window_size,
+                'lstm_hidden_size': self.lstm_hidden_size,
+                'lstm_layers': self.lstm_layers,
+                'lstm_output_size': self.lstm_output_size,
+                'num_sequences': int(len(sequences)),
+                'num_features': int(feature_count),
+                'num_batteries': int(len(set(battery_ids)))
+            },
+            'data': {
+                'engineered_dataframe': df,
+                'sequences': sequences,
+                'features': features,
+                'targets': targets,
+                'battery_ids': np.array(battery_ids)
+            },
+            'splits': {
+                'X_seq_train': X_seq_train,
+                'X_seq_test': X_seq_test,
+                'X_feat_train': X_feat_train,
+                'X_feat_test': X_feat_test,
+                'y_train': y_train,
+                'y_test': y_test
+            },
+            'results': results,
+            'cv_results': cv_results
+        }
+        
+        # Save results and summary artifacts
+        self.save_results(results, cv_results=cv_results, training_summary=training_summary)
         
         return results
 

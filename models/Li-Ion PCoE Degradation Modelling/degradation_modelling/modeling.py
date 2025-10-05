@@ -109,7 +109,7 @@ class LSTMBatteryEncoder(nn.Module):
     def _init_weights(self):
         """Initialize weights for better training stability."""
         for name, param in self.named_parameters():
-            if 'weight' in name:
+            if 'weight' in name and param.dim() >= 2:
                 nn.init.xavier_uniform_(param)
             elif 'bias' in name:
                 nn.init.zeros_(param)
@@ -268,8 +268,7 @@ class HybridLSTMGBMModel:
             colsample_bytree=0.9,
             reg_alpha=0.1,
             reg_lambda=0.1,
-            random_state=42,
-            early_stopping_rounds=20
+            random_state=42
         )
         
         self.gbm_model.fit(combined_features, targets)

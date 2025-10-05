@@ -1,0 +1,6 @@
+{
+  "sequence_length": 15,
+  "lstm_hidden_size": 64,
+  "lstm_layers": 2,
+  "lstm_output_size": 32
+}
