@@ -103,6 +103,46 @@ def _parse_anomaly_sequences(sequence_str: Any, series_length: int) -> List[Tupl
 
     return parsed
 
+def _interpolate_array(values: np.ndarray) -> np.ndarray:
+    """Replace missing/extreme values and interpolate with linear fill."""
+    df = pd.DataFrame(values)
+    df = df.replace([np.inf, -np.inf], np.nan)
+    df = df.interpolate(method="linear", limit_direction="both")
+    df = df.fillna(method="ffill").fillna(method="bfill").fillna(0)
+    return df.to_numpy(dtype=np.float32)
+
+
+def _create_sequences(
+    data: np.ndarray,
+    labels: np.ndarray,
+    window_size: int,
+    step_size: int,
+) -> Tuple[np.ndarray, np.ndarray, List[Tuple[int, int]]]:
+    """Generate sliding windows and associated labels/indices for one channel."""
+    sequences: List[np.ndarray] = []
+    sequence_labels: List[int] = []
+    indices: List[Tuple[int, int]] = []
+    total_length = len(data)
+
+    if total_length < window_size:
+        empty_seq = np.empty((0, window_size, data.shape[1]), dtype=np.float32)
+        empty_labels = np.empty((0,), dtype=int)
+        return empty_seq, empty_labels, []
+
+    for start in range(0, total_length - window_size + 1, step_size):
+        end = start + window_size
+        window = data[start:end]
+        label_slice = labels[start:end]
+        sequences.append(window)
+        window_label = int(label_slice.max()) if label_slice.size else 0
+        sequence_labels.append(window_label)
+        indices.append((start, end))
+
+    stacked = np.stack(sequences).astype(np.float32) if sequences else np.empty((0, window_size, data.shape[1]), dtype=np.float32)
+    label_array = np.asarray(sequence_labels, dtype=int) if sequence_labels else np.empty((0,), dtype=int)
+    return stacked, label_array, indices
+
+
 def load_smap_data() -> Dict[str, Any]:
     print("[INFO] Downloading NASA SMAP dataset via KaggleHub...")
     dataset_path = Path(
