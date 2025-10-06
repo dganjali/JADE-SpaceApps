@@ -64,7 +64,7 @@
     <!-- ==================== CHASER SPACECRAFT ==================== -->
     <model name="chaser">
       <!-- Random orientation - will auto-align -->
-      <pose>0.00 0.00 0.00 0.489 0.332 -0.124</pose>
+      <pose>0.00 0.00 0.00 0.022 -0.382 0.092</pose>
       <link name="body">
         <pose>0 0 0 0 0 0</pose>
         
@@ -307,7 +307,7 @@
     <!-- ==================== DOCK SPACECRAFT ==================== -->
     <model name="dock">
       <!-- Random position and orientation -->
-      <pose>1.33 33.60 1.94 0.647 0.161 -0.009</pose>
+      <pose>-13.59 18.83 1.24 -0.007 -0.450 0.168</pose>
       <link name="body">
         <pose>0 0 0 0 0 0</pose>
         
