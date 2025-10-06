@@ -1,0 +1,10 @@
+{
+    "metrics": {
+        "metrics/precision(B)": 0.4845195189939574,
+        "metrics/recall(B)": 0.5946084210166152,
+        "metrics/mAP50(B)": 0.5094707544804912,
+        "metrics/mAP50-95(B)": 0.31644704056235995,
+        "fitness": 0.31644704056235995
+    },
+    "path_to_best_weights": "/content/drive/MyDrive/YOLOv8_Satellite_Project/best.pt"
+}
