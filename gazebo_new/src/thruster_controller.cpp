@@ -183,74 +183,130 @@ public:
       return;
     }
     
-    // If getting too close but approaching too fast, apply stronger braking
-    // Only brake if within 2x reach distance and approaching very fast (> 0.8 m/s)
-    if (dist < this->reachDistance * 2.0 && approachVel > 0.8)
+    // Emergency braking if approaching too fast when close
+    // Trigger earlier and more gradually than before
+    if (dist < this->reachDistance * 4.0 && approachVel > 0.5)
     {
-      // Emergency braking - apply force opposite to relative velocity
-      if (relSpeed > 1e-6) // check for zero velocity
+      // Calculate how much we need to slow down
+      // Braking strength scales with approach velocity and proximity
+      double brakingStrength = std::min(approachVel / 0.5, 2.0); // 1.0 at 0.5 m/s, 2.0 at 1.0+ m/s
+      double proximityScale = 1.0;
+      
+      if (dist < this->reachDistance * 2.0)
       {
-        gz::math::Vector3d brakingForce = -relVel.Normalized() * this->maxForce * 0.8;
+        // Stronger braking when very close
+        proximityScale = 2.0 - (dist / (this->reachDistance * 2.0)); // 2.0 at 0m, 1.0 at 2x reach
+      }
+      
+      // Apply braking force opposite to approach direction
+      if (relSpeed > 1e-6)
+      {
+        gz::math::Vector3d brakingForce = -relVel.Normalized() * this->maxForce * 0.7 * brakingStrength * proximityScale;
         targetLink.AddWorldForce(ecm, brakingForce);
       }
       
-      if (this->iter % 100 == 0)
+      if (this->iter % 80 == 0)
       {
-        std::cout << "[ThrusterController] EMERGENCY BRAKE: dist=" << dist 
-                  << " approach_vel=" << approachVel << " rel_speed=" << relSpeed << " m/s" << std::endl;
+        std::cout << "[ThrusterController] BRAKING: dist=" << dist 
+                  << " approachVel=" << approachVel << " brakingStrength=" << brakingStrength * proximityScale
+                  << " relSpeed=" << relSpeed << " m/s" << std::endl;
       }
       this->iter++;
       return;
     }
 
-    // PD controller for moving target interception
-    // Goal: chaser should reach dock's position AND match its velocity (rendezvous)
+    // IMPROVED PD CONTROLLER with Proper Interception Logic
+    // Goal: Intercept the moving dock and perform soft docking (match velocity)
     
-    // Position error: where we need to go
-    gz::math::Vector3d positionError = relPos;
-    
-    // Velocity error: difference between our velocity and where we should be going
-    // We want: vTarget → vDock (to match the dock's motion)
-    gz::math::Vector3d desiredVelocity = vDock + (this->kp / this->kd) * positionError; // lead the target
-    gz::math::Vector3d velocityError = vTarget - desiredVelocity;
-    
-    // PD control: correct position error and velocity tracking
-    gz::math::Vector3d accelDesired = this->kp * positionError - this->kd * velocityError;
-
-    // mass of target (get inertial mass from link)
+    // Get mass for force calculation
     double mass = 10.0; // default mass from chaser model
     auto inertialComp = ecm.Component<components::Inertial>(this->targetLinkEntity);
     if (inertialComp && inertialComp->Data().MassMatrix().Mass() > 0.0)
     {
       mass = inertialComp->Data().MassMatrix().Mass();
     }
-    // compute force = m * a
-    gz::math::Vector3d force = accelDesired * mass;
+    
+    // Calculate time to intercept (estimate)
+    double timeToIntercept = 1.0; // default 1 second
+    if (relSpeed > 0.01)
+    {
+      timeToIntercept = dist / std::max(relSpeed, 0.5); // don't divide by very small numbers
+      timeToIntercept = std::min(timeToIntercept, 10.0); // cap at 10 seconds
+    }
+    
+    // Predicted dock position (lead the target)
+    gz::math::Vector3d predictedDockPos = dockPose.Pos() + vDock * timeToIntercept;
+    
+    // Interception point error
+    gz::math::Vector3d interceptError = predictedDockPos - targetPose.Pos();
+    double interceptDist = interceptError.Length();
+    
+    // Velocity matching error (we want to match dock velocity for rendezvous)
+    gz::math::Vector3d velocityError = vTarget - vDock;
+    
+    // Adaptive gains based on distance
+    double distanceScale = 1.0;
+    double approachPhase = 0.0; // 0 = far, 1 = very close
+    
+    if (dist < 8.0)
+    {
+      // Smoothly reduce gains as we get closer
+      approachPhase = 1.0 - (dist / 8.0); // 0 at 8m, 1 at 0m
+      distanceScale = 0.3 + 0.7 * (1.0 - approachPhase); // 100% at 8m+, 30% at 0m
+    }
+    
+    // PD control with velocity matching
+    // P term: drive towards intercept point
+    // D term: damp relative velocity and match dock velocity
+    gz::math::Vector3d positionForce = this->kp * distanceScale * interceptError;
+    gz::math::Vector3d dampingForce = -this->kd * distanceScale * velocityError;
+    
+    gz::math::Vector3d force = positionForce + dampingForce;
+    
+    // Additional soft approach logic when very close
+    if (dist < this->reachDistance * 3.0)
+    {
+      // Reduce force based on approach velocity
+      double softScale = 1.0;
+      if (approachVel > 0.3) // approaching too fast
+      {
+        softScale = 0.3 / std::max(approachVel, 0.31); // inverse scaling
+      }
+      force = force * softScale;
+      
+      // Add explicit velocity matching component
+      gz::math::Vector3d matchingForce = (vDock - vTarget) * mass * 0.5;
+      force = force + matchingForce;
+    }
+    
+    // Convert to actual force (F = ma is already implied above)
+    force = force * mass;
+    
+    // Limit force magnitude with safety check
+    double forceMag = force.Length();
+    if (forceMag > this->maxForce)
+    {
+      force = (force / forceMag) * this->maxForce;
+    }
+    else if (forceMag < 1e-6 && dist > this->reachDistance * 2.0)
+    {
+      // If force is too small but we're not close enough, apply minimum thrust towards dock
+      if (dist > 1e-6)
+      {
+        force = (relPos / dist) * (this->maxForce * 0.15);
+      }
+    }
     
     // Debug output every 50 iterations
     if (this->iter % 50 == 0)
     {
-      std::cout << "[ThrusterController] dist=" << dist << " approachVel=" << approachVel
+      std::cout << "[ThrusterController] dist=" << dist << " interceptDist=" << interceptDist
+                << " approachVel=" << approachVel << " phase=" << approachPhase
                 << " vTarget=" << vTarget.Length() << " vDock=" << vDock.Length()
-                << " force=" << force.Length() << std::endl;
+                << " force=" << forceMag << "N" << std::endl;
     }
 
-    // limit force magnitude with safety check
-    double forceMag = force.Length();
-    if (forceMag > this->maxForce)
-    {
-      force = (force / forceMag) * this->maxForce; // avoid Normalized() which can fail on zero vector
-    }
-    else if (forceMag < 1e-6 && dist > this->reachDistance * 1.5)
-    {
-      // If force is too small but we're not close enough, apply minimum thrust
-      if (dist > 1e-6)
-      {
-        force = (relPos / dist) * (this->maxForce * 0.1);
-      }
-    }
-
-    // Apply force to target link (reuse Link helper from above)
+    // Apply force to target link
     targetLink.AddWorldForce(ecm, force);
 
     // Optionally we can also set angular velocity / torque handling (omitted here for simplicity).
@@ -268,13 +324,13 @@ private:
   // parameters
   std::string targetModelName = "chaser";
   std::string dockModelName = "dock";
-  double reachDistance = 0.3;
-  double kp = 2.0;  // increased for better tracking
-  double kd = 2.0;  // increased damping to match
-  double maxForce = 10.0;
+  double reachDistance = 0.5; // increased for easier success
+  double kp = 1.8;  // optimized for interception
+  double kd = 2.2;  // higher damping for smooth approach
+  double maxForce = 12.0; // increased for better acceleration
   double dockInitSpeed = 0.15; // deprecated, keeping for compatibility
-  double dockThrustForce = 5.0; // continuous thrust force for dock
-  double maxDockSpeed = 0.3; // maximum velocity for dock (m/s)
+  double dockThrustForce = 4.0; // moderate thrust force for dock
+  double maxDockSpeed = 0.35; // maximum velocity for dock (m/s)
 
   // internal
   bool configured{false};

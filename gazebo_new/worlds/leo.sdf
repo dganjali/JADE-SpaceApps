@@ -77,12 +77,12 @@
       <!-- controller parameters -->
       <target_model>chaser</target_model>
       <dock_model>dock</dock_model>
-      <reach_distance>0.8</reach_distance> <!-- success threshold (meters) -->
-      <kp>1.0</kp>    <!-- proportional gain (gentler approach) -->
-      <kd>1.5</kd>    <!-- derivative gain (more damping for smooth approach) -->
-      <max_force>8.0</max_force> <!-- N, reduced for careful approach -->
-      <dock_thrust_force>3.5</dock_thrust_force> <!-- N, dock's continuous thrust (reduced for slower movement) -->
-      <max_dock_speed>0.25</max_dock_speed> <!-- m/s, maximum dock velocity -->
+      <reach_distance>0.6</reach_distance> <!-- success threshold (meters) -->
+      <kp>1.8</kp>    <!-- proportional gain for interception -->
+      <kd>2.2</kd>    <!-- derivative gain for smooth damping -->
+      <max_force>12.0</max_force> <!-- N, sufficient for interception -->
+      <dock_thrust_force>4.0</dock_thrust_force> <!-- N, dock's continuous thrust -->
+      <max_dock_speed>0.35</max_dock_speed> <!-- m/s, maximum dock velocity -->
     </plugin>
 
   </world>
