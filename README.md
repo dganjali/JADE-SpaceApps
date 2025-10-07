@@ -594,9 +594,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Project Maintainer**: Darius Ganjali  
-**Email**: [your-email@example.com]  
-**GitHub**: [@dganjali](https://github.com/dganjali)  
+**Project Maintainers**: Daniel Ganjali & Arjan Waraich 
+**Email**: danial.ganjali@gmail.com + waraicharjan97@gmail.com 
+**GitHub**: [@dganjali](https://github.com/dganjali) + https://github.com/RJN25
 **Project Link**: [https://github.com/dganjali/JADE-SpaceApps](https://github.com/dganjali/JADE-SpaceApps)
 
 ---
